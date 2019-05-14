@@ -6,6 +6,7 @@ from .distplot import plot_dist
 from .elpdplot import plot_elpd
 from .energyplot import plot_energy
 from .essplot import plot_ess
+from .extendedpairplot import plot_func_posterior, plot_pair_extended
 from .forestplot import plot_forest
 from .hpdplot import plot_hpd
 from .jointplot import plot_joint
@@ -33,6 +34,7 @@ __all__ = [
     "plot_forest",
     "plot_hpd",
     "plot_joint",
+    "plot_func_posterior",
     "plot_kde",
     "_fast_kde",
     "_fast_kde_2d",
@@ -40,6 +42,7 @@ __all__ = [
     "plot_loo_pit",
     "plot_mcse",
     "plot_pair",
+    "plot_pair_extended",
     "plot_parallel",
     "plot_posterior",
     "plot_ppc",
