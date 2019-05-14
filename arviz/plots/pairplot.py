@@ -16,6 +16,7 @@ def plot_pair(
     data,
     var_names=None,
     coords=None,
+    combined=True,
     figsize=None,
     textsize=None,
     kind="scatter",
@@ -40,6 +41,8 @@ def plot_pair(
         Variables to be plotted, if None all variable are plotted
     coords : mapping, optional
         Coordinates of var_names to be plotted. Passed to `Dataset.sel`
+    combined : bool
+        Whether to combine all chains or leave them separate
     figsize : figure size tuple
         If None, size is (8 + numvars, 8 + numvars)
     textsize: int
@@ -139,7 +142,7 @@ def plot_pair(
     posterior_data = convert_to_dataset(data, group="posterior")
     var_names = _var_names(var_names, posterior_data)
     flat_var_names, _posterior = xarray_to_ndarray(
-        get_coords(posterior_data, coords), var_names=var_names, combined=True
+        get_coords(posterior_data, coords), var_names=var_names, combined=combined
     )
 
     # Get diverging draws and combine chains
