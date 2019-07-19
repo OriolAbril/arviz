@@ -67,11 +67,10 @@ class PyMC3Converter:
                 log_like_val = log_like_val[~var.observations.mask]
             return log_like_val
 
-        chain_likelihoods = []
+        log_like = np.empty((self.nchains, self.ndraws, *shape))
         for chain in self.trace.chains:
-            log_like = [log_likelihood_vals_point(point) for point in self.trace.points([chain])]
-            chain_likelihoods.append(np.stack(log_like))
-        return np.stack(chain_likelihoods), coord_name
+            log_like[chain, :] = np.stack([log_likelihood_vals_point(point) for point in self.trace.points([chain])])
+        return log_like, coord_name
 
     @requires("trace")
     def posterior_to_xarray(self):
