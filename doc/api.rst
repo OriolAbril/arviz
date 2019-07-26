@@ -109,3 +109,13 @@ Utils
 
       Numba
       interactive_backend
+
+Wrappers
+--------
+
+.. autosummary::
+      :toctree: generated/
+      :template: class.rst
+
+      SamplingWrapper
+
