@@ -36,8 +36,8 @@ class SamplingWrapper:
     ):
         self.model = model
 
-        if not isinstance(idata_orig, InferenceData) or idata_orig is not None:
-            raise TypeError("idata_orig must be of InferenceData type or None")
+        # if not isinstance(idata_orig, InferenceData) or idata_orig is not None:
+        #     raise TypeError("idata_orig must be of InferenceData type or None")
         self.idata_orig = idata_orig
 
         if log_like_fun is None or callable(log_like_fun):
