@@ -49,7 +49,7 @@ class InferenceData:
         object.__delattr__(self, group)
 
     @staticmethod
-    def from_netcdf(filename):
+    def from_netcdf(filename, **kwargs):
         """Initialize object from a netcdf file.
 
         Expects that the file will have groups, each of which can be loaded by xarray.
@@ -71,7 +71,7 @@ class InferenceData:
             data_groups = list(data.groups)
 
         for group in data_groups:
-            with xr.open_dataset(filename, group=group) as data:
+            with xr.open_dataset(filename, group=group, **kwargs) as data:
                 if rcParams["data.load"] == "eager":
                     groups[group] = data.load()
                 else:
