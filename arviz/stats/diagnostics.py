@@ -62,7 +62,7 @@ def bfmi(data):
     return _bfmi(dataset.energy)
 
 
-def ess(data, *, var_names=None, method="bulk", relative=False, prob=None):
+def ess(data, *, var_names=None, method="bulk", relative=False, prob=None, **kwargs):
     r"""Calculate estimate of the effective sample size.
 
     Parameters
@@ -190,7 +190,7 @@ def ess(data, *, var_names=None, method="bulk", relative=False, prob=None):
 
     ufunc_kwargs = {"ravel": False}
     func_kwargs = {"relative": relative} if prob is None else {"prob": prob, "relative": relative}
-    return _wrap_xarray_ufunc(ess_func, dataset, ufunc_kwargs=ufunc_kwargs, func_kwargs=func_kwargs)
+    return _wrap_xarray_ufunc(ess_func, dataset, ufunc_kwargs=ufunc_kwargs, func_kwargs=func_kwargs, **kwargs)
 
 
 def rhat(data, *, var_names=None, method="rank"):
