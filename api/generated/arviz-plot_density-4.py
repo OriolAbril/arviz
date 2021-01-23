@@ -1,1 +1,1 @@
-az.plot_density([centered, non_centered], var_names=["mu"], hdi_prob=.5)
+az.plot_density([centered, non_centered], var_names=["mu"], group="prior")

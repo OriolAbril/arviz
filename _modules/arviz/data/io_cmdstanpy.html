@@ -5,9 +5,9 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>arviz.data.io_cmdstanpy &#8212; ArviZ 0.10.0 documentation</title>
+    <title>arviz.data.io_cmdstanpy &#8212; ArviZ 0.11.0 documentation</title>
     
-  <link rel="stylesheet" href="../../../_static/css/index.d431a4ee1c1efae0e38bdfebc22debff.css">
+  <link rel="stylesheet" href="../../../_static/css/index.73d71520a4ca3b99cfee5594769eaaae.css">
 
     
   <link rel="stylesheet"
@@ -25,18 +25,19 @@
     href="../../../_static/vendor/lato_latin-ext/1.44.1/index.css">
 
     
-    <link rel="stylesheet" href="../../../_static/basic.css" type="text/css" />
     <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/basic.css" type="text/css" />
     <link rel="stylesheet" type="text/css" href="../../../_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="../../../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
     
-  <link rel="preload" as="script" href="../../../_static/js/index.30270b6e4c972e43c488.js">
+  <link rel="preload" as="script" href="../../../_static/js/index.3da636dd464baa7582d2.js">
 
     <script id="documentation_options" data-url_root="../../../" src="../../../_static/documentation_options.js"></script>
     <script src="../../../_static/jquery.js"></script>
     <script src="../../../_static/underscore.js"></script>
     <script src="../../../_static/doctools.js"></script>
-    <script src="../../../_static/language_data.js"></script>
     <script src="../../../_static/togglebutton.js"></script>
     <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
     <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
@@ -53,11 +54,11 @@
     <nav class="navbar navbar-light navbar-expand-lg bg-light fixed-top bd-navbar" id="navbar-main">
 <div class="container-xl">
 
-    
     <a class="navbar-brand" href="../../../index.html">
-      <img src="../../../_static/logo.png" class="logo" alt="logo">
-    </a>
     
+      <img src="../../../_static/logo.png" class="logo" alt="logo" />
+    
+    </a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-menu" aria-controls="navbar-menu" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
     </button>
@@ -124,40 +125,40 @@
     <div class="container-xl">
       <div class="row">
           
-          <div class="col-12 col-md-3 bd-sidebar">
-
-<form class="bd-search d-flex align-items-center" action="../../../search.html" method="get">
+  
+    
+          <div class="col-12 col-md-3 bd-sidebar"><form class="bd-search d-flex align-items-center" action="../../../search.html" method="get">
   <i class="icon fas fa-search"></i>
   <input type="search" class="form-control" name="q" id="search-input" placeholder="Search the docs ..." aria-label="Search the docs ..." autocomplete="off" >
 </form>
-
-
 <nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
 
-  <div class="bd-toc-item active">
+    <div class="bd-toc-item active">
+    
   
-
-  <ul class="nav bd-sidenav">
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-    </ul>
-
-</nav>
+    <ul class="nav bd-sidenav">
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+      </ul>
+  
+  </nav>
           </div>
           
+  
+
 
           
   
@@ -179,6 +180,8 @@
 
 
           
+  
+    
           <main class="col-12 col-md-9 col-xl-7 py-md-5 pl-md-5 pr-md-4 bd-content" role="main">
               
               <div>
@@ -194,6 +197,7 @@
 <span class="kn">import</span> <span class="nn">xarray</span> <span class="k">as</span> <span class="nn">xr</span>
 
 <span class="kn">from</span> <span class="nn">..</span> <span class="kn">import</span> <span class="n">utils</span>
+<span class="kn">from</span> <span class="nn">..rcparams</span> <span class="kn">import</span> <span class="n">rcParams</span>
 <span class="kn">from</span> <span class="nn">.base</span> <span class="kn">import</span> <span class="n">dict_to_dataset</span><span class="p">,</span> <span class="n">generate_dims_coords</span><span class="p">,</span> <span class="n">make_attrs</span><span class="p">,</span> <span class="n">requires</span>
 <span class="kn">from</span> <span class="nn">.inference_data</span> <span class="kn">import</span> <span class="n">InferenceData</span>
 
@@ -218,7 +222,8 @@
         <span class="n">predictions_constant_data</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
         <span class="n">log_likelihood</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
         <span class="n">coords</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
-        <span class="n">dims</span><span class="o">=</span><span class="kc">None</span>
+        <span class="n">dims</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+        <span class="n">save_warmup</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
     <span class="p">):</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">posterior</span> <span class="o">=</span> <span class="n">posterior</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">posterior_predictive</span> <span class="o">=</span> <span class="n">posterior_predictive</span>
@@ -231,6 +236,8 @@
         <span class="bp">self</span><span class="o">.</span><span class="n">log_likelihood</span> <span class="o">=</span> <span class="n">log_likelihood</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">coords</span> <span class="o">=</span> <span class="n">coords</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">dims</span> <span class="o">=</span> <span class="n">dims</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">save_warmup</span> <span class="o">=</span> <span class="n">rcParams</span><span class="p">[</span><span class="s2">&quot;data.save_warmup&quot;</span><span class="p">]</span> <span class="k">if</span> <span class="n">save_warmup</span> <span class="ow">is</span> <span class="kc">None</span> <span class="k">else</span> <span class="n">save_warmup</span>
 
         <span class="kn">import</span> <span class="nn">cmdstanpy</span>  <span class="c1"># pylint: disable=import-error</span>
 
@@ -289,12 +296,19 @@
             <span class="o">+</span> <span class="p">[</span><span class="n">col</span> <span class="k">for</span> <span class="n">col</span> <span class="ow">in</span> <span class="n">columns</span> <span class="k">if</span> <span class="n">col</span><span class="o">.</span><span class="n">endswith</span><span class="p">(</span><span class="s2">&quot;__&quot;</span><span class="p">)]</span>
         <span class="p">)</span>
         <span class="n">valid_cols</span> <span class="o">=</span> <span class="p">[</span><span class="n">col</span> <span class="k">for</span> <span class="n">col</span> <span class="ow">in</span> <span class="n">columns</span> <span class="k">if</span> <span class="n">col</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">invalid_cols</span><span class="p">]</span>
-        <span class="n">data</span> <span class="o">=</span> <span class="n">_unpack_frame</span><span class="p">(</span>
-            <span class="bp">self</span><span class="o">.</span><span class="n">posterior</span><span class="o">.</span><span class="n">draws</span><span class="p">()</span> <span class="k">if</span> <span class="nb">hasattr</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">posterior</span><span class="p">,</span> <span class="s2">&quot;draws&quot;</span><span class="p">)</span> <span class="k">else</span> <span class="bp">self</span><span class="o">.</span><span class="n">posterior</span><span class="o">.</span><span class="n">sample</span><span class="p">,</span>
+        <span class="n">data</span><span class="p">,</span> <span class="n">data_warmup</span> <span class="o">=</span> <span class="n">_unpack_frame</span><span class="p">(</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">posterior</span><span class="p">,</span>
             <span class="n">columns</span><span class="p">,</span>
             <span class="n">valid_cols</span><span class="p">,</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">save_warmup</span><span class="p">,</span>
         <span class="p">)</span>
-        <span class="k">return</span> <span class="n">dict_to_dataset</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">library</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">cmdstanpy</span><span class="p">,</span> <span class="n">coords</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">coords</span><span class="p">,</span> <span class="n">dims</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">dims</span><span class="p">)</span>
+
+        <span class="k">return</span> <span class="p">(</span>
+            <span class="n">dict_to_dataset</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">library</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">cmdstanpy</span><span class="p">,</span> <span class="n">coords</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">coords</span><span class="p">,</span> <span class="n">dims</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">dims</span><span class="p">),</span>
+            <span class="n">dict_to_dataset</span><span class="p">(</span>
+                <span class="n">data_warmup</span><span class="p">,</span> <span class="n">library</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">cmdstanpy</span><span class="p">,</span> <span class="n">coords</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">coords</span><span class="p">,</span> <span class="n">dims</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">dims</span>
+            <span class="p">),</span>
+        <span class="p">)</span>
 
     <span class="nd">@requires</span><span class="p">(</span><span class="s2">&quot;posterior&quot;</span><span class="p">)</span>
     <span class="k">def</span> <span class="nf">sample_stats_to_xarray</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
@@ -303,10 +317,11 @@
 
         <span class="n">columns</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">posterior</span><span class="o">.</span><span class="n">column_names</span>
         <span class="n">valid_cols</span> <span class="o">=</span> <span class="p">[</span><span class="n">col</span> <span class="k">for</span> <span class="n">col</span> <span class="ow">in</span> <span class="n">columns</span> <span class="k">if</span> <span class="n">col</span><span class="o">.</span><span class="n">endswith</span><span class="p">(</span><span class="s2">&quot;__&quot;</span><span class="p">)]</span>
-        <span class="n">data</span> <span class="o">=</span> <span class="n">_unpack_frame</span><span class="p">(</span>
-            <span class="bp">self</span><span class="o">.</span><span class="n">posterior</span><span class="o">.</span><span class="n">draws</span><span class="p">()</span> <span class="k">if</span> <span class="nb">hasattr</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">posterior</span><span class="p">,</span> <span class="s2">&quot;draws&quot;</span><span class="p">)</span> <span class="k">else</span> <span class="bp">self</span><span class="o">.</span><span class="n">posterior</span><span class="o">.</span><span class="n">sample</span><span class="p">,</span>
+        <span class="n">data</span><span class="p">,</span> <span class="n">data_warmup</span> <span class="o">=</span> <span class="n">_unpack_frame</span><span class="p">(</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">posterior</span><span class="p">,</span>
             <span class="n">columns</span><span class="p">,</span>
             <span class="n">valid_cols</span><span class="p">,</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">save_warmup</span><span class="p">,</span>
         <span class="p">)</span>
 
         <span class="k">for</span> <span class="n">s_param</span> <span class="ow">in</span> <span class="nb">list</span><span class="p">(</span><span class="n">data</span><span class="o">.</span><span class="n">keys</span><span class="p">()):</span>
@@ -314,7 +329,14 @@
             <span class="n">name</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">sub</span><span class="p">(</span><span class="s2">&quot;__$&quot;</span><span class="p">,</span> <span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="n">s_param_</span><span class="p">)</span>
             <span class="n">name</span> <span class="o">=</span> <span class="s2">&quot;diverging&quot;</span> <span class="k">if</span> <span class="n">name</span> <span class="o">==</span> <span class="s2">&quot;divergent&quot;</span> <span class="k">else</span> <span class="n">name</span>
             <span class="n">data</span><span class="p">[</span><span class="n">name</span><span class="p">]</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="n">s_param</span><span class="p">)</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="n">dtypes</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">s_param</span><span class="p">,</span> <span class="nb">float</span><span class="p">))</span>
-        <span class="k">return</span> <span class="n">dict_to_dataset</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">library</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">cmdstanpy</span><span class="p">,</span> <span class="n">coords</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">coords</span><span class="p">,</span> <span class="n">dims</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">dims</span><span class="p">)</span>
+            <span class="k">if</span> <span class="n">data_warmup</span><span class="p">:</span>
+                <span class="n">data_warmup</span><span class="p">[</span><span class="n">name</span><span class="p">]</span> <span class="o">=</span> <span class="n">data_warmup</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="n">s_param</span><span class="p">)</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="n">dtypes</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">s_param</span><span class="p">,</span> <span class="nb">float</span><span class="p">))</span>
+        <span class="k">return</span> <span class="p">(</span>
+            <span class="n">dict_to_dataset</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">library</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">cmdstanpy</span><span class="p">,</span> <span class="n">coords</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">coords</span><span class="p">,</span> <span class="n">dims</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">dims</span><span class="p">),</span>
+            <span class="n">dict_to_dataset</span><span class="p">(</span>
+                <span class="n">data_warmup</span><span class="p">,</span> <span class="n">library</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">cmdstanpy</span><span class="p">,</span> <span class="n">coords</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">coords</span><span class="p">,</span> <span class="n">dims</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">dims</span>
+            <span class="p">),</span>
+        <span class="p">)</span>
 
     <span class="nd">@requires</span><span class="p">(</span><span class="s2">&quot;posterior&quot;</span><span class="p">)</span>
     <span class="nd">@requires</span><span class="p">(</span><span class="s2">&quot;posterior_predictive&quot;</span><span class="p">)</span>
@@ -329,12 +351,19 @@
         <span class="n">valid_cols</span> <span class="o">=</span> <span class="p">[</span>
             <span class="n">col</span> <span class="k">for</span> <span class="n">col</span> <span class="ow">in</span> <span class="n">columns</span> <span class="k">if</span> <span class="n">col</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">&quot;[&quot;</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">&quot;.&quot;</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span> <span class="ow">in</span> <span class="n">posterior_predictive</span>
         <span class="p">]</span>
-        <span class="n">data</span> <span class="o">=</span> <span class="n">_unpack_frame</span><span class="p">(</span>
-            <span class="bp">self</span><span class="o">.</span><span class="n">posterior</span><span class="o">.</span><span class="n">draws</span><span class="p">()</span> <span class="k">if</span> <span class="nb">hasattr</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">posterior</span><span class="p">,</span> <span class="s2">&quot;draws&quot;</span><span class="p">)</span> <span class="k">else</span> <span class="bp">self</span><span class="o">.</span><span class="n">posterior</span><span class="o">.</span><span class="n">sample</span><span class="p">,</span>
+        <span class="n">data</span><span class="p">,</span> <span class="n">data_warmup</span> <span class="o">=</span> <span class="n">_unpack_frame</span><span class="p">(</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">posterior</span><span class="p">,</span>
             <span class="n">columns</span><span class="p">,</span>
             <span class="n">valid_cols</span><span class="p">,</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">save_warmup</span><span class="p">,</span>
         <span class="p">)</span>
-        <span class="k">return</span> <span class="n">dict_to_dataset</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">library</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">cmdstanpy</span><span class="p">,</span> <span class="n">coords</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">coords</span><span class="p">,</span> <span class="n">dims</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">dims</span><span class="p">)</span>
+
+        <span class="k">return</span> <span class="p">(</span>
+            <span class="n">dict_to_dataset</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">library</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">cmdstanpy</span><span class="p">,</span> <span class="n">coords</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">coords</span><span class="p">,</span> <span class="n">dims</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">dims</span><span class="p">),</span>
+            <span class="n">dict_to_dataset</span><span class="p">(</span>
+                <span class="n">data_warmup</span><span class="p">,</span> <span class="n">library</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">cmdstanpy</span><span class="p">,</span> <span class="n">coords</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">coords</span><span class="p">,</span> <span class="n">dims</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">dims</span>
+            <span class="p">),</span>
+        <span class="p">)</span>
 
     <span class="nd">@requires</span><span class="p">(</span><span class="s2">&quot;posterior&quot;</span><span class="p">)</span>
     <span class="nd">@requires</span><span class="p">(</span><span class="s2">&quot;predictions&quot;</span><span class="p">)</span>
@@ -347,12 +376,54 @@
             <span class="n">predictions</span> <span class="o">=</span> <span class="p">[</span><span class="n">predictions</span><span class="p">]</span>
         <span class="n">predictions</span> <span class="o">=</span> <span class="nb">set</span><span class="p">(</span><span class="n">predictions</span><span class="p">)</span>
         <span class="n">valid_cols</span> <span class="o">=</span> <span class="p">[</span><span class="n">col</span> <span class="k">for</span> <span class="n">col</span> <span class="ow">in</span> <span class="n">columns</span> <span class="k">if</span> <span class="n">col</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">&quot;[&quot;</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">&quot;.&quot;</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span> <span class="ow">in</span> <span class="nb">set</span><span class="p">(</span><span class="n">predictions</span><span class="p">)]</span>
-        <span class="n">data</span> <span class="o">=</span> <span class="n">_unpack_frame</span><span class="p">(</span>
-            <span class="bp">self</span><span class="o">.</span><span class="n">posterior</span><span class="o">.</span><span class="n">draws</span><span class="p">()</span> <span class="k">if</span> <span class="nb">hasattr</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">posterior</span><span class="p">,</span> <span class="s2">&quot;draws&quot;</span><span class="p">)</span> <span class="k">else</span> <span class="bp">self</span><span class="o">.</span><span class="n">posterior</span><span class="o">.</span><span class="n">sample</span><span class="p">,</span>
+        <span class="n">data</span><span class="p">,</span> <span class="n">data_warmup</span> <span class="o">=</span> <span class="n">_unpack_frame</span><span class="p">(</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">posterior</span><span class="p">,</span>
             <span class="n">columns</span><span class="p">,</span>
             <span class="n">valid_cols</span><span class="p">,</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">save_warmup</span><span class="p">,</span>
         <span class="p">)</span>
-        <span class="k">return</span> <span class="n">dict_to_dataset</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">library</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">cmdstanpy</span><span class="p">,</span> <span class="n">coords</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">coords</span><span class="p">,</span> <span class="n">dims</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">dims</span><span class="p">)</span>
+
+        <span class="k">return</span> <span class="p">(</span>
+            <span class="n">dict_to_dataset</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">library</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">cmdstanpy</span><span class="p">,</span> <span class="n">coords</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">coords</span><span class="p">,</span> <span class="n">dims</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">dims</span><span class="p">),</span>
+            <span class="n">dict_to_dataset</span><span class="p">(</span>
+                <span class="n">data_warmup</span><span class="p">,</span> <span class="n">library</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">cmdstanpy</span><span class="p">,</span> <span class="n">coords</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">coords</span><span class="p">,</span> <span class="n">dims</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">dims</span>
+            <span class="p">),</span>
+        <span class="p">)</span>
+
+    <span class="nd">@requires</span><span class="p">(</span><span class="s2">&quot;posterior&quot;</span><span class="p">)</span>
+    <span class="nd">@requires</span><span class="p">(</span><span class="s2">&quot;log_likelihood&quot;</span><span class="p">)</span>
+    <span class="k">def</span> <span class="nf">log_likelihood_to_xarray</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Convert elementwise log likelihood samples to xarray.&quot;&quot;&quot;</span>
+        <span class="n">log_likelihood</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">log_likelihood</span>
+        <span class="n">columns</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">posterior</span><span class="o">.</span><span class="n">column_names</span>
+
+        <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">log_likelihood</span><span class="p">,</span> <span class="nb">str</span><span class="p">):</span>
+            <span class="n">log_likelihood</span> <span class="o">=</span> <span class="p">[</span><span class="n">log_likelihood</span><span class="p">]</span>
+        <span class="n">log_likelihood</span> <span class="o">=</span> <span class="nb">set</span><span class="p">(</span><span class="n">log_likelihood</span><span class="p">)</span>
+        <span class="n">valid_cols</span> <span class="o">=</span> <span class="p">[</span><span class="n">col</span> <span class="k">for</span> <span class="n">col</span> <span class="ow">in</span> <span class="n">columns</span> <span class="k">if</span> <span class="n">col</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">&quot;[&quot;</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">&quot;.&quot;</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span> <span class="ow">in</span> <span class="n">log_likelihood</span><span class="p">]</span>
+        <span class="n">data</span><span class="p">,</span> <span class="n">data_warmup</span> <span class="o">=</span> <span class="n">_unpack_frame</span><span class="p">(</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">posterior</span><span class="p">,</span>
+            <span class="n">columns</span><span class="p">,</span>
+            <span class="n">valid_cols</span><span class="p">,</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">save_warmup</span><span class="p">,</span>
+        <span class="p">)</span>
+
+        <span class="k">return</span> <span class="p">(</span>
+            <span class="n">dict_to_dataset</span><span class="p">(</span>
+                <span class="n">data</span><span class="p">,</span>
+                <span class="n">library</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">cmdstanpy</span><span class="p">,</span>
+                <span class="n">coords</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">coords</span><span class="p">,</span>
+                <span class="n">dims</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">dims</span><span class="p">,</span>
+                <span class="n">skip_event_dims</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+            <span class="p">),</span>
+            <span class="n">dict_to_dataset</span><span class="p">(</span>
+                <span class="n">data_warmup</span><span class="p">,</span>
+                <span class="n">library</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">cmdstanpy</span><span class="p">,</span>
+                <span class="n">coords</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">coords</span><span class="p">,</span>
+                <span class="n">dims</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">dims</span><span class="p">,</span>
+                <span class="n">skip_event_dims</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+            <span class="p">),</span>
+        <span class="p">)</span>
 
     <span class="nd">@requires</span><span class="p">(</span><span class="s2">&quot;prior&quot;</span><span class="p">)</span>
     <span class="k">def</span> <span class="nf">prior_to_xarray</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
@@ -377,12 +448,19 @@
 
         <span class="n">valid_cols</span> <span class="o">=</span> <span class="p">[</span><span class="n">col</span> <span class="k">for</span> <span class="n">col</span> <span class="ow">in</span> <span class="n">columns</span> <span class="k">if</span> <span class="n">col</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">invalid_cols</span><span class="p">]</span>
 
-        <span class="n">data</span> <span class="o">=</span> <span class="n">_unpack_frame</span><span class="p">(</span>
-            <span class="bp">self</span><span class="o">.</span><span class="n">prior</span><span class="o">.</span><span class="n">draws</span><span class="p">()</span> <span class="k">if</span> <span class="nb">hasattr</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">prior</span><span class="p">,</span> <span class="s2">&quot;draws&quot;</span><span class="p">)</span> <span class="k">else</span> <span class="bp">self</span><span class="o">.</span><span class="n">prior</span><span class="o">.</span><span class="n">sample</span><span class="p">,</span>
+        <span class="n">data</span><span class="p">,</span> <span class="n">data_warmup</span> <span class="o">=</span> <span class="n">_unpack_frame</span><span class="p">(</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">prior</span><span class="p">,</span>
             <span class="n">columns</span><span class="p">,</span>
             <span class="n">valid_cols</span><span class="p">,</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">save_warmup</span><span class="p">,</span>
         <span class="p">)</span>
-        <span class="k">return</span> <span class="n">dict_to_dataset</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">library</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">cmdstanpy</span><span class="p">,</span> <span class="n">coords</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">coords</span><span class="p">,</span> <span class="n">dims</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">dims</span><span class="p">)</span>
+
+        <span class="k">return</span> <span class="p">(</span>
+            <span class="n">dict_to_dataset</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">library</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">cmdstanpy</span><span class="p">,</span> <span class="n">coords</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">coords</span><span class="p">,</span> <span class="n">dims</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">dims</span><span class="p">),</span>
+            <span class="n">dict_to_dataset</span><span class="p">(</span>
+                <span class="n">data_warmup</span><span class="p">,</span> <span class="n">library</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">cmdstanpy</span><span class="p">,</span> <span class="n">coords</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">coords</span><span class="p">,</span> <span class="n">dims</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">dims</span>
+            <span class="p">),</span>
+        <span class="p">)</span>
 
     <span class="nd">@requires</span><span class="p">(</span><span class="s2">&quot;prior&quot;</span><span class="p">)</span>
     <span class="k">def</span> <span class="nf">sample_stats_prior_to_xarray</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
@@ -395,17 +473,24 @@
         <span class="n">dims</span> <span class="o">=</span> <span class="n">deepcopy</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">dims</span><span class="p">)</span> <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">dims</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span> <span class="k">else</span> <span class="p">{}</span>
         <span class="n">coords</span> <span class="o">=</span> <span class="n">deepcopy</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">coords</span><span class="p">)</span> <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">coords</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span> <span class="k">else</span> <span class="p">{}</span>
 
-        <span class="n">data</span> <span class="o">=</span> <span class="n">_unpack_frame</span><span class="p">(</span>
-            <span class="bp">self</span><span class="o">.</span><span class="n">prior</span><span class="o">.</span><span class="n">draws</span><span class="p">()</span> <span class="k">if</span> <span class="nb">hasattr</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">prior</span><span class="p">,</span> <span class="s2">&quot;draws&quot;</span><span class="p">)</span> <span class="k">else</span> <span class="bp">self</span><span class="o">.</span><span class="n">prior</span><span class="o">.</span><span class="n">sample</span><span class="p">,</span>
+        <span class="n">data</span><span class="p">,</span> <span class="n">data_warmup</span> <span class="o">=</span> <span class="n">_unpack_frame</span><span class="p">(</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">prior</span><span class="p">,</span>
             <span class="n">columns</span><span class="p">,</span>
             <span class="n">valid_cols</span><span class="p">,</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">save_warmup</span><span class="p">,</span>
         <span class="p">)</span>
+
         <span class="k">for</span> <span class="n">s_param</span> <span class="ow">in</span> <span class="nb">list</span><span class="p">(</span><span class="n">data</span><span class="o">.</span><span class="n">keys</span><span class="p">()):</span>
             <span class="n">s_param_</span><span class="p">,</span> <span class="o">*</span><span class="n">_</span> <span class="o">=</span> <span class="n">s_param</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">&quot;.&quot;</span><span class="p">)</span>
             <span class="n">name</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">sub</span><span class="p">(</span><span class="s2">&quot;__$&quot;</span><span class="p">,</span> <span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="n">s_param_</span><span class="p">)</span>
             <span class="n">name</span> <span class="o">=</span> <span class="s2">&quot;diverging&quot;</span> <span class="k">if</span> <span class="n">name</span> <span class="o">==</span> <span class="s2">&quot;divergent&quot;</span> <span class="k">else</span> <span class="n">name</span>
             <span class="n">data</span><span class="p">[</span><span class="n">name</span><span class="p">]</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="n">s_param</span><span class="p">)</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="n">dtypes</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">s_param</span><span class="p">,</span> <span class="nb">float</span><span class="p">))</span>
-        <span class="k">return</span> <span class="n">dict_to_dataset</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">library</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">cmdstanpy</span><span class="p">,</span> <span class="n">coords</span><span class="o">=</span><span class="n">coords</span><span class="p">,</span> <span class="n">dims</span><span class="o">=</span><span class="n">dims</span><span class="p">)</span>
+            <span class="k">if</span> <span class="n">data_warmup</span><span class="p">:</span>
+                <span class="n">data_warmup</span><span class="p">[</span><span class="n">name</span><span class="p">]</span> <span class="o">=</span> <span class="n">data_warmup</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="n">s_param</span><span class="p">)</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="n">dtypes</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">s_param</span><span class="p">,</span> <span class="nb">float</span><span class="p">))</span>
+        <span class="k">return</span> <span class="p">(</span>
+            <span class="n">dict_to_dataset</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">library</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">cmdstanpy</span><span class="p">,</span> <span class="n">coords</span><span class="o">=</span><span class="n">coords</span><span class="p">,</span> <span class="n">dims</span><span class="o">=</span><span class="n">dims</span><span class="p">),</span>
+            <span class="n">dict_to_dataset</span><span class="p">(</span><span class="n">data_warmup</span><span class="p">,</span> <span class="n">library</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">cmdstanpy</span><span class="p">,</span> <span class="n">coords</span><span class="o">=</span><span class="n">coords</span><span class="p">,</span> <span class="n">dims</span><span class="o">=</span><span class="n">dims</span><span class="p">),</span>
+        <span class="p">)</span>
 
     <span class="nd">@requires</span><span class="p">(</span><span class="s2">&quot;prior&quot;</span><span class="p">)</span>
     <span class="nd">@requires</span><span class="p">(</span><span class="s2">&quot;prior_predictive&quot;</span><span class="p">)</span>
@@ -418,12 +503,19 @@
             <span class="n">prior_predictive</span> <span class="o">=</span> <span class="p">[</span><span class="n">prior_predictive</span><span class="p">]</span>
         <span class="n">prior_predictive</span> <span class="o">=</span> <span class="nb">set</span><span class="p">(</span><span class="n">prior_predictive</span><span class="p">)</span>
         <span class="n">valid_cols</span> <span class="o">=</span> <span class="p">[</span><span class="n">col</span> <span class="k">for</span> <span class="n">col</span> <span class="ow">in</span> <span class="n">columns</span> <span class="k">if</span> <span class="n">col</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">&quot;[&quot;</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">&quot;.&quot;</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span> <span class="ow">in</span> <span class="n">prior_predictive</span><span class="p">]</span>
-        <span class="n">data</span> <span class="o">=</span> <span class="n">_unpack_frame</span><span class="p">(</span>
-            <span class="bp">self</span><span class="o">.</span><span class="n">prior</span><span class="o">.</span><span class="n">draws</span><span class="p">()</span> <span class="k">if</span> <span class="nb">hasattr</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">prior</span><span class="p">,</span> <span class="s2">&quot;draws&quot;</span><span class="p">)</span> <span class="k">else</span> <span class="bp">self</span><span class="o">.</span><span class="n">prior</span><span class="o">.</span><span class="n">sample</span><span class="p">,</span>
+        <span class="n">data</span><span class="p">,</span> <span class="n">data_warmup</span> <span class="o">=</span> <span class="n">_unpack_frame</span><span class="p">(</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">prior</span><span class="p">,</span>
             <span class="n">columns</span><span class="p">,</span>
             <span class="n">valid_cols</span><span class="p">,</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">save_warmup</span><span class="p">,</span>
         <span class="p">)</span>
-        <span class="k">return</span> <span class="n">dict_to_dataset</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">library</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">cmdstanpy</span><span class="p">,</span> <span class="n">coords</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">coords</span><span class="p">,</span> <span class="n">dims</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">dims</span><span class="p">)</span>
+
+        <span class="k">return</span> <span class="p">(</span>
+            <span class="n">dict_to_dataset</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">library</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">cmdstanpy</span><span class="p">,</span> <span class="n">coords</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">coords</span><span class="p">,</span> <span class="n">dims</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">dims</span><span class="p">),</span>
+            <span class="n">dict_to_dataset</span><span class="p">(</span>
+                <span class="n">data_warmup</span><span class="p">,</span> <span class="n">library</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">cmdstanpy</span><span class="p">,</span> <span class="n">coords</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">coords</span><span class="p">,</span> <span class="n">dims</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">dims</span>
+            <span class="p">),</span>
+        <span class="p">)</span>
 
     <span class="nd">@requires</span><span class="p">(</span><span class="s2">&quot;observed_data&quot;</span><span class="p">)</span>
     <span class="k">def</span> <span class="nf">observed_data_to_xarray</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
@@ -466,24 +558,6 @@
             <span class="n">data_vars</span><span class="o">=</span><span class="n">predictions_constant_data</span><span class="p">,</span> <span class="n">attrs</span><span class="o">=</span><span class="n">make_attrs</span><span class="p">(</span><span class="n">library</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">cmdstanpy</span><span class="p">)</span>
         <span class="p">)</span>
 
-    <span class="nd">@requires</span><span class="p">(</span><span class="s2">&quot;posterior&quot;</span><span class="p">)</span>
-    <span class="nd">@requires</span><span class="p">(</span><span class="s2">&quot;log_likelihood&quot;</span><span class="p">)</span>
-    <span class="k">def</span> <span class="nf">log_likelihood_to_xarray</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;Convert elementwise log likelihood samples to xarray.&quot;&quot;&quot;</span>
-        <span class="n">log_likelihood</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">log_likelihood</span>
-        <span class="n">columns</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">posterior</span><span class="o">.</span><span class="n">column_names</span>
-
-        <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">log_likelihood</span><span class="p">,</span> <span class="nb">str</span><span class="p">):</span>
-            <span class="n">log_likelihood</span> <span class="o">=</span> <span class="p">[</span><span class="n">log_likelihood</span><span class="p">]</span>
-        <span class="n">log_likelihood</span> <span class="o">=</span> <span class="nb">set</span><span class="p">(</span><span class="n">log_likelihood</span><span class="p">)</span>
-        <span class="n">valid_cols</span> <span class="o">=</span> <span class="p">[</span><span class="n">col</span> <span class="k">for</span> <span class="n">col</span> <span class="ow">in</span> <span class="n">columns</span> <span class="k">if</span> <span class="n">col</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">&quot;[&quot;</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">&quot;.&quot;</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span> <span class="ow">in</span> <span class="n">log_likelihood</span><span class="p">]</span>
-        <span class="n">data</span> <span class="o">=</span> <span class="n">_unpack_frame</span><span class="p">(</span>
-            <span class="bp">self</span><span class="o">.</span><span class="n">posterior</span><span class="o">.</span><span class="n">draws</span><span class="p">()</span> <span class="k">if</span> <span class="nb">hasattr</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">posterior</span><span class="p">,</span> <span class="s2">&quot;draws&quot;</span><span class="p">)</span> <span class="k">else</span> <span class="bp">self</span><span class="o">.</span><span class="n">posterior</span><span class="o">.</span><span class="n">sample</span><span class="p">,</span>
-            <span class="n">columns</span><span class="p">,</span>
-            <span class="n">valid_cols</span><span class="p">,</span>
-        <span class="p">)</span>
-        <span class="k">return</span> <span class="n">dict_to_dataset</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">library</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">cmdstanpy</span><span class="p">,</span> <span class="n">coords</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">coords</span><span class="p">,</span> <span class="n">dims</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">dims</span><span class="p">)</span>
-
     <span class="k">def</span> <span class="nf">to_inference_data</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;Convert all available data to an InferenceData object.</span>
 
@@ -492,6 +566,7 @@
 <span class="sd">        will not have those groups.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="k">return</span> <span class="n">InferenceData</span><span class="p">(</span>
+            <span class="n">save_warmup</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">save_warmup</span><span class="p">,</span>
             <span class="o">**</span><span class="p">{</span>
                 <span class="s2">&quot;posterior&quot;</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">posterior_to_xarray</span><span class="p">(),</span>
                 <span class="s2">&quot;sample_stats&quot;</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">sample_stats_to_xarray</span><span class="p">(),</span>
@@ -504,25 +579,41 @@
                 <span class="s2">&quot;constant_data&quot;</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">constant_data_to_xarray</span><span class="p">(),</span>
                 <span class="s2">&quot;predictions_constant_data&quot;</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">predictions_constant_data_to_xarray</span><span class="p">(),</span>
                 <span class="s2">&quot;log_likelihood&quot;</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">log_likelihood_to_xarray</span><span class="p">(),</span>
-            <span class="p">}</span>
+            <span class="p">},</span>
         <span class="p">)</span>
 
 
-<span class="k">def</span> <span class="nf">_unpack_frame</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">columns</span><span class="p">,</span> <span class="n">valid_cols</span><span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot;Transform a list of pandas.DataFrames to dictionary containing ndarrays.</span>
+<span class="k">def</span> <span class="nf">_unpack_frame</span><span class="p">(</span><span class="n">fit</span><span class="p">,</span> <span class="n">columns</span><span class="p">,</span> <span class="n">valid_cols</span><span class="p">,</span> <span class="n">save_warmup</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;Transform fit to dictionary containing ndarrays.</span>
 
 <span class="sd">    Parameters</span>
 <span class="sd">    ----------</span>
-<span class="sd">    data : np.ndarray</span>
-<span class="sd">    columns : list</span>
-<span class="sd">    valid_cols : list</span>
+<span class="sd">    data: cmdstanpy.CmdStanMCMC</span>
+<span class="sd">    columns: list</span>
+<span class="sd">    valid_cols: list</span>
+<span class="sd">    save_warmup: bool</span>
 
 <span class="sd">    Returns</span>
 <span class="sd">    -------</span>
 <span class="sd">    dict</span>
 <span class="sd">        key, values pairs. Values are formatted to shape = (chains, draws, *shape)</span>
 <span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">if</span> <span class="n">save_warmup</span> <span class="ow">and</span> <span class="ow">not</span> <span class="n">fit</span><span class="o">.</span><span class="n">_save_warmup</span><span class="p">:</span>  <span class="c1"># pylint: disable=protected-access</span>
+        <span class="n">save_warmup</span> <span class="o">=</span> <span class="kc">False</span>
+    <span class="k">if</span> <span class="nb">hasattr</span><span class="p">(</span><span class="n">fit</span><span class="p">,</span> <span class="s2">&quot;draws&quot;</span><span class="p">):</span>
+        <span class="n">data</span> <span class="o">=</span> <span class="n">fit</span><span class="o">.</span><span class="n">draws</span><span class="p">(</span><span class="n">inc_warmup</span><span class="o">=</span><span class="n">save_warmup</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">save_warmup</span><span class="p">:</span>
+            <span class="n">num_warmup</span> <span class="o">=</span> <span class="n">fit</span><span class="o">.</span><span class="n">_draws_warmup</span>  <span class="c1"># pylint: disable=protected-access</span>
+            <span class="n">data_warmup</span> <span class="o">=</span> <span class="n">data</span><span class="p">[:</span><span class="n">num_warmup</span><span class="p">]</span>
+            <span class="n">data</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="n">num_warmup</span><span class="p">:]</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">data</span> <span class="o">=</span> <span class="n">fit</span><span class="o">.</span><span class="n">sample</span>
+        <span class="k">if</span> <span class="n">save_warmup</span><span class="p">:</span>
+            <span class="n">data_warmup</span> <span class="o">=</span> <span class="n">fit</span><span class="o">.</span><span class="n">warmup</span><span class="p">[:</span> <span class="n">data</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]]</span>
+
     <span class="n">draws</span><span class="p">,</span> <span class="n">chains</span><span class="p">,</span> <span class="o">*</span><span class="n">_</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">shape</span>
+    <span class="k">if</span> <span class="n">save_warmup</span><span class="p">:</span>
+        <span class="n">draws_warmup</span><span class="p">,</span> <span class="o">*</span><span class="n">_</span> <span class="o">=</span> <span class="n">data_warmup</span><span class="o">.</span><span class="n">shape</span>
 
     <span class="n">column_groups</span> <span class="o">=</span> <span class="n">defaultdict</span><span class="p">(</span><span class="nb">list</span><span class="p">)</span>
     <span class="n">column_locs</span> <span class="o">=</span> <span class="n">defaultdict</span><span class="p">(</span><span class="nb">list</span><span class="p">)</span>
@@ -544,6 +635,7 @@
         <span class="c1"># gather parameter dimensions (assumes dense arrays)</span>
         <span class="n">dims</span><span class="p">[</span><span class="n">colname</span><span class="p">]</span> <span class="o">=</span> <span class="nb">tuple</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">col_dims</span><span class="p">)</span><span class="o">.</span><span class="n">max</span><span class="p">(</span><span class="mi">0</span><span class="p">))</span>
     <span class="n">sample</span> <span class="o">=</span> <span class="p">{}</span>
+    <span class="n">sample_warmup</span> <span class="o">=</span> <span class="p">{}</span>
     <span class="n">valid_base_cols</span> <span class="o">=</span> <span class="p">[]</span>
     <span class="c1"># get list of parameters for extraction (basename) X.1.2 --&gt; X</span>
     <span class="k">for</span> <span class="n">col</span> <span class="ow">in</span> <span class="n">valid_cols</span><span class="p">:</span>
@@ -557,17 +649,23 @@
         <span class="n">shape_location</span> <span class="o">=</span> <span class="n">column_groups</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">key</span><span class="p">,</span> <span class="kc">None</span><span class="p">)</span>
         <span class="k">if</span> <span class="n">ndim</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
             <span class="n">sample</span><span class="p">[</span><span class="n">key</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">full</span><span class="p">((</span><span class="n">chains</span><span class="p">,</span> <span class="n">draws</span><span class="p">,</span> <span class="o">*</span><span class="n">ndim</span><span class="p">),</span> <span class="n">np</span><span class="o">.</span><span class="n">nan</span><span class="p">)</span>
+            <span class="k">if</span> <span class="n">save_warmup</span><span class="p">:</span>
+                <span class="n">sample_warmup</span><span class="p">[</span><span class="n">key</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">full</span><span class="p">((</span><span class="n">chains</span><span class="p">,</span> <span class="n">draws_warmup</span><span class="p">,</span> <span class="o">*</span><span class="n">ndim</span><span class="p">),</span> <span class="n">np</span><span class="o">.</span><span class="n">nan</span><span class="p">)</span>
         <span class="k">if</span> <span class="n">shape_location</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
             <span class="c1"># reorder draw, chain -&gt; chain, draw</span>
             <span class="p">(</span><span class="n">i</span><span class="p">,)</span> <span class="o">=</span> <span class="n">column_locs</span><span class="p">[</span><span class="n">key</span><span class="p">]</span>
             <span class="n">sample</span><span class="p">[</span><span class="n">key</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">swapaxes</span><span class="p">(</span><span class="n">data</span><span class="p">[</span><span class="o">...</span><span class="p">,</span> <span class="n">i</span><span class="p">],</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+            <span class="k">if</span> <span class="n">save_warmup</span><span class="p">:</span>
+                <span class="n">sample_warmup</span><span class="p">[</span><span class="n">key</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">swapaxes</span><span class="p">(</span><span class="n">data_warmup</span><span class="p">[</span><span class="o">...</span><span class="p">,</span> <span class="n">i</span><span class="p">],</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
         <span class="k">else</span><span class="p">:</span>
             <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">shape_loc</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">column_locs</span><span class="p">[</span><span class="n">key</span><span class="p">],</span> <span class="n">shape_location</span><span class="p">):</span>
                 <span class="c1"># location to insert extracted array</span>
                 <span class="n">shape_loc</span> <span class="o">=</span> <span class="nb">tuple</span><span class="p">([</span><span class="bp">Ellipsis</span><span class="p">]</span> <span class="o">+</span> <span class="p">[</span><span class="n">j</span> <span class="o">-</span> <span class="mi">1</span> <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="n">shape_loc</span><span class="p">])</span>
                 <span class="c1"># reorder draw, chain -&gt; chain, draw and insert to ndarray</span>
                 <span class="n">sample</span><span class="p">[</span><span class="n">key</span><span class="p">][</span><span class="n">shape_loc</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">swapaxes</span><span class="p">(</span><span class="n">data</span><span class="p">[</span><span class="o">...</span><span class="p">,</span> <span class="n">i</span><span class="p">],</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
-    <span class="k">return</span> <span class="n">sample</span>
+                <span class="k">if</span> <span class="n">save_warmup</span><span class="p">:</span>
+                    <span class="n">sample_warmup</span><span class="p">[</span><span class="n">key</span><span class="p">][</span><span class="n">shape_loc</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">swapaxes</span><span class="p">(</span><span class="n">data_warmup</span><span class="p">[</span><span class="o">...</span><span class="p">,</span> <span class="n">i</span><span class="p">],</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">sample</span><span class="p">,</span> <span class="n">sample_warmup</span>
 
 
 <div class="viewcode-block" id="from_cmdstanpy"><a class="viewcode-back" href="../../../api/generated/arviz.from_cmdstanpy.html#arviz.from_cmdstanpy">[docs]</a><span class="k">def</span> <span class="nf">from_cmdstanpy</span><span class="p">(</span>
@@ -582,12 +680,13 @@
     <span class="n">predictions_constant_data</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
     <span class="n">log_likelihood</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
     <span class="n">coords</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
-    <span class="n">dims</span><span class="o">=</span><span class="kc">None</span>
+    <span class="n">dims</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+    <span class="n">save_warmup</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
 <span class="p">):</span>
     <span class="sd">&quot;&quot;&quot;Convert CmdStanPy data into an InferenceData object.</span>
 
 <span class="sd">    For a usage example read the</span>
-<span class="sd">    :ref:`Cookbook section on from_cmdstanpy &lt;cookbook&gt;`</span>
+<span class="sd">    :ref:`Creating InferenceData section on from_cmdstanpy &lt;creating_InferenceData&gt;`</span>
 
 <span class="sd">    Parameters</span>
 <span class="sd">    ----------</span>
@@ -614,6 +713,9 @@
 <span class="sd">        is the name of the dimension, the values are the index values.</span>
 <span class="sd">    dims : dict of str or list of str</span>
 <span class="sd">        A mapping from variables to a list of coordinate names for the variable.</span>
+<span class="sd">    save_warmup : bool</span>
+<span class="sd">        Save warmup iterations into InferenceData object, if found in the input files.</span>
+<span class="sd">        If not defined, use default defined by the rcParams.</span>
 
 <span class="sd">    Returns</span>
 <span class="sd">    -------</span>
@@ -631,6 +733,7 @@
         <span class="n">log_likelihood</span><span class="o">=</span><span class="n">log_likelihood</span><span class="p">,</span>
         <span class="n">coords</span><span class="o">=</span><span class="n">coords</span><span class="p">,</span>
         <span class="n">dims</span><span class="o">=</span><span class="n">dims</span><span class="p">,</span>
+        <span class="n">save_warmup</span><span class="o">=</span><span class="n">save_warmup</span><span class="p">,</span>
     <span class="p">)</span><span class="o">.</span><span class="n">to_inference_data</span><span class="p">()</span></div>
 </pre></div>
 
@@ -644,19 +747,21 @@
               
           </main>
           
+  
+
 
       </div>
     </div>
 
     
-  <script src="../../../_static/js/index.30270b6e4c972e43c488.js"></script>
+  <script src="../../../_static/js/index.3da636dd464baa7582d2.js"></script>
 
 
     <footer class="footer mt-5 mt-md-0">
   <div class="container">
     <p>
           &copy; Copyright 2018, ArviZ devs.<br/>
-        Created using <a href="http://sphinx-doc.org/">Sphinx</a> 3.2.1.<br/>
+        Created using <a href="http://sphinx-doc.org/">Sphinx</a> 3.4.3.<br/>
     </p>
   </div>
 </footer>

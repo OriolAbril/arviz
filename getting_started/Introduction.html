@@ -5,9 +5,9 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>ArviZ Quickstart &#8212; ArviZ 0.10.0 documentation</title>
+    <title>ArviZ Quickstart &#8212; ArviZ 0.11.0 documentation</title>
     
-  <link rel="stylesheet" href="../_static/css/index.d431a4ee1c1efae0e38bdfebc22debff.css">
+  <link rel="stylesheet" href="../_static/css/index.73d71520a4ca3b99cfee5594769eaaae.css">
 
     
   <link rel="stylesheet"
@@ -25,18 +25,19 @@
     href="../_static/vendor/lato_latin-ext/1.44.1/index.css">
 
     
-    <link rel="stylesheet" href="../_static/basic.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/basic.css" type="text/css" />
     <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
     
-  <link rel="preload" as="script" href="../_static/js/index.30270b6e4c972e43c488.js">
+  <link rel="preload" as="script" href="../_static/js/index.3da636dd464baa7582d2.js">
 
     <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
     <script src="../_static/jquery.js"></script>
     <script src="../_static/underscore.js"></script>
     <script src="../_static/doctools.js"></script>
-    <script src="../_static/language_data.js"></script>
     <script src="../_static/togglebutton.js"></script>
     <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
     <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
@@ -55,11 +56,11 @@
     <nav class="navbar navbar-light navbar-expand-lg bg-light fixed-top bd-navbar" id="navbar-main">
 <div class="container-xl">
 
-    
     <a class="navbar-brand" href="../index.html">
-      <img src="../_static/logo.png" class="logo" alt="logo">
-    </a>
     
+      <img src="../_static/logo.png" class="logo" alt="logo" />
+    
+    </a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-menu" aria-controls="navbar-menu" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
     </button>
@@ -126,60 +127,66 @@
     <div class="container-xl">
       <div class="row">
           
-          <div class="col-12 col-md-3 bd-sidebar">
-
-<form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+  
+    
+          <div class="col-12 col-md-3 bd-sidebar"><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
   <i class="icon fas fa-search"></i>
   <input type="search" class="form-control" name="q" id="search-input" placeholder="Search the docs ..." aria-label="Search the docs ..." autocomplete="off" >
 </form>
-
-
 <nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
 
-  <div class="bd-toc-item active">
+    <div class="bd-toc-item active">
+    
   
-
-  <ul class="nav bd-sidenav">
-      
-      
+    <ul class="nav bd-sidenav">
+        
         
           
-              <li class="active">
-                  <a href="">ArviZ Quickstart</a>
-              </li>
+            
+                <li class="active">
+                    <a href="">ArviZ Quickstart</a>
+                </li>
+            
+          
+            
+                <li class="">
+                    <a href="XarrayforArviZ.html">Introduction to xarray, InferenceData, and NetCDF for ArviZ</a>
+                </li>
+            
+          
+            
+                <li class="">
+                    <a href="CreatingInferenceData.html">Creating InferenceData</a>
+                </li>
+            
+          
+            
+                <li class="">
+                    <a href="WorkingWithInferenceData.html">Working with InferenceData</a>
+                </li>
+            
           
         
-          
-              <li class="">
-                  <a href="XarrayforArviZ.html">Introduction to xarray, InferenceData, and NetCDF for ArviZ</a>
-              </li>
-          
         
-          
-              <li class="">
-                  <a href="InferenceDataCookbook.html">Inference Data Cookbook</a>
-              </li>
-          
         
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-    </ul>
-
-</nav>
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+      </ul>
+  
+  </nav>
           </div>
           
+  
+
 
           
   
@@ -198,7 +205,7 @@
         </li>
     
         <li class="nav-item toc-entry toc-h2">
-            <a href="#plotting-with-pymc3-objects" class="nav-link">Plotting with PyMC3 objects</a><ul class="nav section-nav flex-column">
+            <a href="#arviz-rcparams" class="nav-link">ArviZ rcParams</a><ul class="nav section-nav flex-column">
                 
         <li class="nav-item toc-entry toc-h3">
             <a href="#convert-to-inferencedata" class="nav-link">Convert to InferenceData</a>
@@ -222,12 +229,14 @@
 
 
           
+  
+    
           <main class="col-12 col-md-9 col-xl-7 py-md-5 pl-md-5 pr-md-4 bd-content" role="main">
               
               <div>
                 
   <div class="section" id="arviz-quickstart">
-<h1>ArviZ Quickstart<a class="headerlink" href="#arviz-quickstart" title="Permalink to this headline">¶</a></h1>
+<span id="quickstart"></span><h1>ArviZ Quickstart<a class="headerlink" href="#arviz-quickstart" title="Permalink to this headline">¶</a></h1>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">arviz</span> <span class="k">as</span> <span class="nn">az</span>
@@ -254,7 +263,7 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/Introduction_4_0.png" src="../_images/Introduction_4_0.png" />
+<img alt="../_images/Introduction_5_0.png" src="../_images/Introduction_5_0.png" />
 </div>
 </div>
 <p>Plotting a dictionary of arrays, ArviZ will interpret each key as the name of a different random variable. Each row of an array is treated as an independent series of draws from the variable, called a <em>chain</em>. Below, we have 10 chains of 50 draws, each for four different distributions.</p>
@@ -273,14 +282,20 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/Introduction_6_0.png" src="../_images/Introduction_6_0.png" />
+<img alt="../_images/Introduction_7_0.png" src="../_images/Introduction_7_0.png" />
 </div>
 </div>
 </div>
-<div class="section" id="plotting-with-pymc3-objects">
-<h2>Plotting with PyMC3 objects<a class="headerlink" href="#plotting-with-pymc3-objects" title="Permalink to this headline">¶</a></h2>
-<p>ArviZ is designed to work well with high dimensional, labelled data. Consider the <a class="reference external" href="http://andrewgelman.com/2014/01/21/everything-need-know-bayesian-statistics-learned-eight-schools/">eight schools model</a>, which roughly tries to measure the effectiveness of SAT classes at eight different schools. To show off ArviZ’s labelling, let’s give the schools the names of <a class="reference external" href="https://en.wikipedia.org/wiki/Eight_Schools_Association">a different eight schools</a>.</p>
-<p>This model is small enough to write down, is hierarchical, uses labelling, and a centered parameterization causes <a class="reference external" href="http://mc-stan.org/users/documentation/case-studies/divergences_and_bias.html">divergences</a> (which are interesting for illustration):</p>
+<div class="section" id="arviz-rcparams">
+<h2>ArviZ rcParams<a class="headerlink" href="#arviz-rcparams" title="Permalink to this headline">¶</a></h2>
+<p>You may have noticed that for both <code class="docutils literal notranslate"><span class="pre">plot_posterior</span></code> and <code class="docutils literal notranslate"><span class="pre">plot_forest</span></code>, the Highest Density Interval (HDI) is 94%, which you may find weird at first. This particular value is a friendly reminder of the arbitrary nature of choosing any single value without further justification, including common values like 95%, 50% and even our own default, 94%. ArviZ includes default values for a few parameters, you can access them with <code class="docutils literal notranslate"><span class="pre">az.rcParams</span></code>. To change the default HDI value to let’s say 90% you can do:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">az</span><span class="o">.</span><span class="n">rcParams</span><span class="p">[</span><span class="s1">&#39;stats.hdi_prob&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="mf">0.90</span>
+</pre></div>
+</div>
+</div>
+</div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pymc3</span> <span class="k">as</span> <span class="nn">pm</span>
@@ -381,7 +396,7 @@ The estimated number of effective samples is smaller than 200 for some parameter
   FutureWarning,
 </pre></div>
 </div>
-<img alt="../_images/Introduction_11_1.png" src="../_images/Introduction_11_1.png" />
+<img alt="../_images/Introduction_13_1.png" src="../_images/Introduction_13_1.png" />
 </div>
 </div>
 <div class="section" id="convert-to-inferencedata">
@@ -6260,7 +6275,7 @@ dl.xr-attrs {
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/Introduction_14_0.png" src="../_images/Introduction_14_0.png" />
+<img alt="../_images/Introduction_16_0.png" src="../_images/Introduction_16_0.png" />
 </div>
 </div>
 </div>
@@ -6331,7 +6346,7 @@ WARNING:pystan:E-BFMI below 0.2 indicates you may need to reparameterize your mo
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/Introduction_17_0.png" src="../_images/Introduction_17_0.png" />
+<img alt="../_images/Introduction_19_0.png" src="../_images/Introduction_19_0.png" />
 </div>
 </div>
 <p>Again, converting to <code class="docutils literal notranslate"><span class="pre">InferenceData</span></code> (a netcdf datastore that loads data into <code class="docutils literal notranslate"><span class="pre">xarray</span></code> datasets), we can get much richer labelling and mixing of data. Here is a plot showing where the Hamiltonian sampler had divergences</p>
@@ -8637,7 +8652,7 @@ dl.xr-attrs {
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/Introduction_20_0.png" src="../_images/Introduction_20_0.png" />
+<img alt="../_images/Introduction_22_0.png" src="../_images/Introduction_22_0.png" />
 </div>
 </div>
 </div>
@@ -8656,19 +8671,21 @@ dl.xr-attrs {
               
           </main>
           
+  
+
 
       </div>
     </div>
 
     
-  <script src="../_static/js/index.30270b6e4c972e43c488.js"></script>
+  <script src="../_static/js/index.3da636dd464baa7582d2.js"></script>
 
 
     <footer class="footer mt-5 mt-md-0">
   <div class="container">
     <p>
           &copy; Copyright 2018, ArviZ devs.<br/>
-        Created using <a href="http://sphinx-doc.org/">Sphinx</a> 3.2.1.<br/>
+        Created using <a href="http://sphinx-doc.org/">Sphinx</a> 3.4.3.<br/>
     </p>
   </div>
 </footer>

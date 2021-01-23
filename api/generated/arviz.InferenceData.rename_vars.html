@@ -5,9 +5,9 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>arviz.InferenceData.rename_vars &#8212; ArviZ 0.10.0 documentation</title>
+    <title>arviz.InferenceData.rename_vars &#8212; ArviZ 0.11.0 documentation</title>
     
-  <link rel="stylesheet" href="../../_static/css/index.d431a4ee1c1efae0e38bdfebc22debff.css">
+  <link rel="stylesheet" href="../../_static/css/index.73d71520a4ca3b99cfee5594769eaaae.css">
 
     
   <link rel="stylesheet"
@@ -25,18 +25,19 @@
     href="../../_static/vendor/lato_latin-ext/1.44.1/index.css">
 
     
-    <link rel="stylesheet" href="../../_static/basic.css" type="text/css" />
     <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/basic.css" type="text/css" />
     <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
     
-  <link rel="preload" as="script" href="../../_static/js/index.30270b6e4c972e43c488.js">
+  <link rel="preload" as="script" href="../../_static/js/index.3da636dd464baa7582d2.js">
 
     <script id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
     <script src="../../_static/jquery.js"></script>
     <script src="../../_static/underscore.js"></script>
     <script src="../../_static/doctools.js"></script>
-    <script src="../../_static/language_data.js"></script>
     <script src="../../_static/togglebutton.js"></script>
     <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
     <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
@@ -55,11 +56,11 @@
     <nav class="navbar navbar-light navbar-expand-lg bg-light fixed-top bd-navbar" id="navbar-main">
 <div class="container-xl">
 
-    
     <a class="navbar-brand" href="../../index.html">
-      <img src="../../_static/logo.png" class="logo" alt="logo">
-    </a>
     
+      <img src="../../_static/logo.png" class="logo" alt="logo" />
+    
+    </a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-menu" aria-controls="navbar-menu" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
     </button>
@@ -126,102 +127,102 @@
     <div class="container-xl">
       <div class="row">
           
-          <div class="col-12 col-md-3 bd-sidebar">
-
-<form class="bd-search d-flex align-items-center" action="../../search.html" method="get">
+  
+    
+          <div class="col-12 col-md-3 bd-sidebar"><form class="bd-search d-flex align-items-center" action="../../search.html" method="get">
   <i class="icon fas fa-search"></i>
   <input type="search" class="form-control" name="q" id="search-input" placeholder="Search the docs ..." aria-label="Search the docs ..." autocomplete="off" >
 </form>
-
-
 <nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
 
-  <div class="bd-toc-item active">
+    <div class="bd-toc-item active">
+    
   
-
-  <ul class="nav bd-sidenav">
-      
-      
-      
-      
-      
-      
-      
-      
+    <ul class="nav bd-sidenav">
+        
+        
+        
+        
+        
+        
+        
         
           
-              <li class="">
-                  <a href="../plots.html">Plots</a>
-              </li>
+            
+                <li class="">
+                    <a href="../plots.html">Plots</a>
+                </li>
+            
+          
+            
+                <li class="">
+                    <a href="../stats.html">Stats</a>
+                </li>
+            
+          
+            
+                <li class="">
+                    <a href="../diagnostics.html">Diagnostics</a>
+                </li>
+            
+          
+            
+                <li class="">
+                    <a href="../stats_utils.html">Stats utils</a>
+                </li>
+            
+          
+            
+                <li class="">
+                    <a href="../data.html">Data</a>
+                </li>
+            
+          
+            
+                <li class="active">
+                    <a href="../inference_data.html">InferenceData</a>
+                </li>
+            
+          
+            
+                <li class="">
+                    <a href="../utils.html">Utils</a>
+                </li>
+            
+          
+            
+                <li class="">
+                    <a href="../rcparams.html">rcParams</a>
+                </li>
+            
+          
+            
+                <li class="">
+                    <a href="../wrappers.html">Wrappers</a>
+                </li>
+            
+          
+            
+                <li class="">
+                    <a href="../stats_refitting.html">Stats (requiring refitting)</a>
+                </li>
+            
           
         
-          
-              <li class="">
-                  <a href="../stats.html">Stats</a>
-              </li>
-          
         
-          
-              <li class="">
-                  <a href="../diagnostics.html">Diagnostics</a>
-              </li>
-          
         
-          
-              <li class="">
-                  <a href="../stats_utils.html">Stats utils</a>
-              </li>
-          
         
-          
-              <li class="">
-                  <a href="../data.html">Data</a>
-              </li>
-          
         
-          
-              <li class="active">
-                  <a href="../inference_data.html">InferenceData</a>
-              </li>
-          
         
-          
-              <li class="">
-                  <a href="../utils.html">Utils</a>
-              </li>
-          
         
-          
-              <li class="">
-                  <a href="../rcparams.html">rcParams</a>
-              </li>
-          
         
-          
-              <li class="">
-                  <a href="../wrappers.html">Wrappers</a>
-              </li>
-          
-        
-          
-              <li class="">
-                  <a href="../stats_refitting.html">Stats (requiring refitting)</a>
-              </li>
-          
-        
-      
-      
-      
-      
-      
-      
-      
-      
-    </ul>
-
-</nav>
+      </ul>
+  
+  </nav>
           </div>
           
+  
+
 
           
   
@@ -243,6 +244,8 @@
 
 
           
+  
+    
           <main class="col-12 col-md-9 col-xl-7 py-md-5 pl-md-5 pr-md-4 bd-content" role="main">
               
               <div>
@@ -257,7 +260,7 @@
 for every key in name_dict if key is a variable or coordinate names of the dataset.
 The renaming is performed on all relevant groups (like
 posterior, prior, sample stats) while non relevant groups like observed data are
-omitted. See <a class="reference external" href="http://xarray.pydata.org/en/stable/generated/xarray.Dataset.rename_vars.html#xarray.Dataset.rename_vars" title="(in xarray v0.16.2.dev3)"><code class="docutils literal notranslate"><span class="pre">xarray.Dataset.rename_vars()</span></code></a></p>
+omitted. See <a class="reference external" href="http://xarray.pydata.org/en/stable/generated/xarray.Dataset.rename_vars.html#xarray.Dataset.rename_vars" title="(in xarray v0.16.3.dev0)"><code class="docutils literal notranslate"><span class="pre">xarray.Dataset.rename_vars()</span></code></a></p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><dl class="simple">
@@ -285,6 +288,38 @@ When <cite>inplace==True</cite> perform renaming in-place and return <cite>None<
 </dl>
 </dd>
 </dl>
+<div class="admonition seealso">
+<p class="admonition-title">See also</p>
+<dl class="simple">
+<dt><a class="reference external" href="http://xarray.pydata.org/en/stable/generated/xarray.Dataset.rename_vars.html#xarray.Dataset.rename_vars" title="(in xarray v0.16.3.dev0)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">xarray.Dataset.rename_vars</span></code></a></dt><dd><p>Returns a new object with renamed variables including coordinates.</p>
+</dd>
+<dt><a class="reference internal" href="arviz.InferenceData.rename.html#arviz.InferenceData.rename" title="arviz.InferenceData.rename"><code class="xref py py-obj docutils literal notranslate"><span class="pre">rename</span></code></a></dt><dd><p>Perform xarray renaming of variable and dimensions on all groups of an InferenceData object.</p>
+</dd>
+<dt><a class="reference internal" href="arviz.InferenceData.rename_dims.html#arviz.InferenceData.rename_dims" title="arviz.InferenceData.rename_dims"><code class="xref py py-obj docutils literal notranslate"><span class="pre">rename_dims</span></code></a></dt><dd><p>Perform xarray renaming of dimensions on all groups of InferenceData object.</p>
+</dd>
+</dl>
+</div>
+<p class="rubric">Examples</p>
+<p>Use <code class="docutils literal notranslate"><span class="pre">rename_vars</span></code> to renaming of variable and coordinates on all groups of the
+InferenceData object. We first check the data variables of original object:</p>
+<div class="highlight-ipython notranslate"><div class="highlight"><pre><span></span><span class="gp">In [1]: </span><span class="kn">import</span> <span class="nn">arviz</span> <span class="k">as</span> <span class="nn">az</span>
+<span class="gp">   ...: </span><span class="n">idata</span> <span class="o">=</span> <span class="n">az</span><span class="o">.</span><span class="n">load_arviz_data</span><span class="p">(</span><span class="s2">&quot;rugby&quot;</span><span class="p">)</span>
+<span class="gp">   ...: </span><span class="nb">print</span><span class="p">(</span><span class="nb">list</span><span class="p">(</span><span class="n">idata</span><span class="o">.</span><span class="n">posterior</span><span class="o">.</span><span class="n">data_vars</span><span class="p">))</span>
+<span class="gp">   ...: </span><span class="nb">print</span><span class="p">(</span><span class="nb">list</span><span class="p">(</span><span class="n">idata</span><span class="o">.</span><span class="n">prior</span><span class="o">.</span><span class="n">data_vars</span><span class="p">))</span>
+<span class="gp">   ...: </span>
+<span class="go">[&#39;home&#39;, &#39;intercept&#39;, &#39;atts_star&#39;, &#39;defs_star&#39;, &#39;sd_att&#39;, &#39;sd_def&#39;, &#39;atts&#39;, &#39;defs&#39;]</span>
+<span class="go">[&#39;sd_att_log__&#39;, &#39;intercept&#39;, &#39;atts_star&#39;, &#39;defs_star&#39;, &#39;away_points&#39;, &#39;sd_att&#39;, &#39;sd_def_log__&#39;, &#39;home&#39;, &#39;atts&#39;, &#39;sd_def&#39;, &#39;home_points&#39;, &#39;defs&#39;]</span>
+</pre></div>
+</div>
+<p>In order to rename the data variables, we use:</p>
+<div class="highlight-ipython notranslate"><div class="highlight"><pre><span></span><span class="gp">In [2]: </span><span class="n">idata</span><span class="o">.</span><span class="n">rename_vars</span><span class="p">({</span><span class="s2">&quot;home&quot;</span><span class="p">:</span> <span class="s2">&quot;home_new&quot;</span><span class="p">},</span> <span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="gp">   ...: </span><span class="nb">print</span><span class="p">(</span><span class="nb">list</span><span class="p">(</span><span class="n">idata</span><span class="o">.</span><span class="n">posterior</span><span class="o">.</span><span class="n">data_vars</span><span class="p">))</span>
+<span class="gp">   ...: </span><span class="nb">print</span><span class="p">(</span><span class="nb">list</span><span class="p">(</span><span class="n">idata</span><span class="o">.</span><span class="n">prior</span><span class="o">.</span><span class="n">data_vars</span><span class="p">))</span>
+<span class="gp">   ...: </span>
+<span class="go">[&#39;home_new&#39;, &#39;intercept&#39;, &#39;atts_star&#39;, &#39;defs_star&#39;, &#39;sd_att&#39;, &#39;sd_def&#39;, &#39;atts&#39;, &#39;defs&#39;]</span>
+<span class="go">[&#39;sd_att_log__&#39;, &#39;intercept&#39;, &#39;atts_star&#39;, &#39;defs_star&#39;, &#39;away_points&#39;, &#39;sd_att&#39;, &#39;sd_def_log__&#39;, &#39;home_new&#39;, &#39;atts&#39;, &#39;sd_def&#39;, &#39;home_points&#39;, &#39;defs&#39;]</span>
+</pre></div>
+</div>
 </dd></dl>
 
 </div>
@@ -302,19 +337,21 @@ When <cite>inplace==True</cite> perform renaming in-place and return <cite>None<
               
           </main>
           
+  
+
 
       </div>
     </div>
 
     
-  <script src="../../_static/js/index.30270b6e4c972e43c488.js"></script>
+  <script src="../../_static/js/index.3da636dd464baa7582d2.js"></script>
 
 
     <footer class="footer mt-5 mt-md-0">
   <div class="container">
     <p>
           &copy; Copyright 2018, ArviZ devs.<br/>
-        Created using <a href="http://sphinx-doc.org/">Sphinx</a> 3.2.1.<br/>
+        Created using <a href="http://sphinx-doc.org/">Sphinx</a> 3.4.3.<br/>
     </p>
   </div>
 </footer>

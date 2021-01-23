@@ -5,9 +5,9 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>arviz.data.inference_data &#8212; ArviZ 0.10.0 documentation</title>
+    <title>arviz.data.inference_data &#8212; ArviZ 0.11.0 documentation</title>
     
-  <link rel="stylesheet" href="../../../_static/css/index.d431a4ee1c1efae0e38bdfebc22debff.css">
+  <link rel="stylesheet" href="../../../_static/css/index.73d71520a4ca3b99cfee5594769eaaae.css">
 
     
   <link rel="stylesheet"
@@ -25,18 +25,19 @@
     href="../../../_static/vendor/lato_latin-ext/1.44.1/index.css">
 
     
-    <link rel="stylesheet" href="../../../_static/basic.css" type="text/css" />
     <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/basic.css" type="text/css" />
     <link rel="stylesheet" type="text/css" href="../../../_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="../../../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
     
-  <link rel="preload" as="script" href="../../../_static/js/index.30270b6e4c972e43c488.js">
+  <link rel="preload" as="script" href="../../../_static/js/index.3da636dd464baa7582d2.js">
 
     <script id="documentation_options" data-url_root="../../../" src="../../../_static/documentation_options.js"></script>
     <script src="../../../_static/jquery.js"></script>
     <script src="../../../_static/underscore.js"></script>
     <script src="../../../_static/doctools.js"></script>
-    <script src="../../../_static/language_data.js"></script>
     <script src="../../../_static/togglebutton.js"></script>
     <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
     <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
@@ -53,11 +54,11 @@
     <nav class="navbar navbar-light navbar-expand-lg bg-light fixed-top bd-navbar" id="navbar-main">
 <div class="container-xl">
 
-    
     <a class="navbar-brand" href="../../../index.html">
-      <img src="../../../_static/logo.png" class="logo" alt="logo">
-    </a>
     
+      <img src="../../../_static/logo.png" class="logo" alt="logo" />
+    
+    </a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-menu" aria-controls="navbar-menu" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
     </button>
@@ -124,40 +125,40 @@
     <div class="container-xl">
       <div class="row">
           
-          <div class="col-12 col-md-3 bd-sidebar">
-
-<form class="bd-search d-flex align-items-center" action="../../../search.html" method="get">
+  
+    
+          <div class="col-12 col-md-3 bd-sidebar"><form class="bd-search d-flex align-items-center" action="../../../search.html" method="get">
   <i class="icon fas fa-search"></i>
   <input type="search" class="form-control" name="q" id="search-input" placeholder="Search the docs ..." aria-label="Search the docs ..." autocomplete="off" >
 </form>
-
-
 <nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
 
-  <div class="bd-toc-item active">
+    <div class="bd-toc-item active">
+    
   
-
-  <ul class="nav bd-sidenav">
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-    </ul>
-
-</nav>
+    <ul class="nav bd-sidenav">
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+      </ul>
+  
+  </nav>
           </div>
           
+  
+
 
           
   
@@ -179,6 +180,8 @@
 
 
           
+  
+    
           <main class="col-12 col-md-9 col-xl-7 py-md-5 pl-md-5 pr-md-4 bd-content" role="main">
               
               <div>
@@ -194,6 +197,20 @@
 <span class="kn">from</span> <span class="nn">copy</span> <span class="kn">import</span> <span class="n">deepcopy</span>
 <span class="kn">from</span> <span class="nn">datetime</span> <span class="kn">import</span> <span class="n">datetime</span>
 <span class="kn">from</span> <span class="nn">html</span> <span class="kn">import</span> <span class="n">escape</span>
+<span class="kn">import</span> <span class="nn">sys</span>
+<span class="kn">from</span> <span class="nn">typing</span> <span class="kn">import</span> <span class="p">(</span>
+    <span class="n">TYPE_CHECKING</span><span class="p">,</span>
+    <span class="n">Any</span><span class="p">,</span>
+    <span class="n">Iterable</span><span class="p">,</span>
+    <span class="n">Iterator</span><span class="p">,</span>
+    <span class="n">List</span><span class="p">,</span>
+    <span class="n">Mapping</span><span class="p">,</span>
+    <span class="n">Optional</span><span class="p">,</span>
+    <span class="n">Tuple</span><span class="p">,</span>
+    <span class="n">TypeVar</span><span class="p">,</span>
+    <span class="n">Union</span><span class="p">,</span>
+    <span class="n">overload</span><span class="p">,</span>
+<span class="p">)</span>
 
 <span class="kn">import</span> <span class="nn">netCDF4</span> <span class="k">as</span> <span class="nn">nc</span>
 <span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
@@ -203,10 +220,23 @@
 <span class="kn">from</span> <span class="nn">..utils</span> <span class="kn">import</span> <span class="n">HtmlTemplate</span><span class="p">,</span> <span class="n">_subset_list</span><span class="p">,</span> <span class="n">either_dict_or_kwargs</span>
 <span class="kn">from</span> <span class="nn">.base</span> <span class="kn">import</span> <span class="n">_extend_xr_method</span><span class="p">,</span> <span class="n">_make_json_serializable</span><span class="p">,</span> <span class="n">dict_to_dataset</span>
 
+<span class="k">if</span> <span class="n">sys</span><span class="o">.</span><span class="n">version_info</span><span class="p">[:</span><span class="mi">2</span><span class="p">]</span> <span class="o">&gt;=</span> <span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">9</span><span class="p">):</span>
+    <span class="c1"># As of 3.9, collections.abc types support generic parameters themselves.</span>
+    <span class="kn">from</span> <span class="nn">collections.abc</span> <span class="kn">import</span> <span class="n">ItemsView</span><span class="p">,</span> <span class="n">ValuesView</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="c1"># These typing imports are deprecated in 3.9, and moved to collections.abc instead.</span>
+    <span class="kn">from</span> <span class="nn">typing</span> <span class="kn">import</span> <span class="n">ItemsView</span><span class="p">,</span> <span class="n">ValuesView</span>
+
+<span class="k">if</span> <span class="n">TYPE_CHECKING</span><span class="p">:</span>
+    <span class="kn">from</span> <span class="nn">typing_extensions</span> <span class="kn">import</span> <span class="n">Literal</span>
+
 <span class="k">try</span><span class="p">:</span>
     <span class="kn">import</span> <span class="nn">ujson</span> <span class="k">as</span> <span class="nn">json</span>
 <span class="k">except</span> <span class="ne">ImportError</span><span class="p">:</span>
-    <span class="kn">import</span> <span class="nn">json</span>
+    <span class="c1"># mypy struggles with conditional imports expressed as catching ImportError:</span>
+    <span class="c1"># https://github.com/python/mypy/issues/1153</span>
+    <span class="kn">import</span> <span class="nn">json</span>  <span class="c1"># type: ignore</span>
+
 
 <span class="n">SUPPORTED_GROUPS</span> <span class="o">=</span> <span class="p">[</span>
     <span class="s2">&quot;posterior&quot;</span><span class="p">,</span>
@@ -234,8 +264,10 @@
 
 <span class="n">SUPPORTED_GROUPS_ALL</span> <span class="o">=</span> <span class="n">SUPPORTED_GROUPS</span> <span class="o">+</span> <span class="n">SUPPORTED_GROUPS_WARMUP</span>
 
+<span class="n">InferenceDataT</span> <span class="o">=</span> <span class="n">TypeVar</span><span class="p">(</span><span class="s2">&quot;InferenceDataT&quot;</span><span class="p">,</span> <span class="n">bound</span><span class="o">=</span><span class="s2">&quot;InferenceData&quot;</span><span class="p">)</span>
 
-<div class="viewcode-block" id="InferenceData"><a class="viewcode-back" href="../../../api/generated/arviz.InferenceData.html#arviz.InferenceData">[docs]</a><span class="k">class</span> <span class="nc">InferenceData</span><span class="p">:</span>
+
+<div class="viewcode-block" id="InferenceData"><a class="viewcode-back" href="../../../api/generated/arviz.InferenceData.html#arviz.InferenceData">[docs]</a><span class="k">class</span> <span class="nc">InferenceData</span><span class="p">(</span><span class="n">Mapping</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">xr</span><span class="o">.</span><span class="n">Dataset</span><span class="p">]):</span>
     <span class="sd">&quot;&quot;&quot;Container for inference data storage using xarray.</span>
 
 <span class="sd">    For a detailed introduction to ``InferenceData`` objects and their usage, see</span>
@@ -243,7 +275,9 @@
 <span class="sd">    on ``InferenceData`` methods and their low level implementation.</span>
 <span class="sd">    &quot;&quot;&quot;</span>
 
-<div class="viewcode-block" id="InferenceData.__init__"><a class="viewcode-back" href="../../../api/generated/arviz.InferenceData.__init__.html#arviz.InferenceData.__init__">[docs]</a>    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+<div class="viewcode-block" id="InferenceData.__init__"><a class="viewcode-back" href="../../../api/generated/arviz.InferenceData.__init__.html#arviz.InferenceData.__init__">[docs]</a>    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span>
+        <span class="bp">self</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">:</span> <span class="n">Union</span><span class="p">[</span><span class="n">xr</span><span class="o">.</span><span class="n">Dataset</span><span class="p">,</span> <span class="n">List</span><span class="p">[</span><span class="n">xr</span><span class="o">.</span><span class="n">Dataset</span><span class="p">],</span> <span class="n">Tuple</span><span class="p">[</span><span class="n">xr</span><span class="o">.</span><span class="n">Dataset</span><span class="p">,</span> <span class="n">xr</span><span class="o">.</span><span class="n">Dataset</span><span class="p">]]</span>
+    <span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
         <span class="sd">&quot;&quot;&quot;Initialize InferenceData object from keyword xarray datasets.</span>
 
 <span class="sd">        Parameters</span>
@@ -284,8 +318,8 @@
 <span class="sd">            In [1]: idata.posterior</span>
 
 <span class="sd">        &quot;&quot;&quot;</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">_groups</span> <span class="o">=</span> <span class="p">[]</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">_groups_warmup</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_groups</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_groups_warmup</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span> <span class="o">=</span> <span class="p">[]</span>
         <span class="n">save_warmup</span> <span class="o">=</span> <span class="n">kwargs</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="s2">&quot;save_warmup&quot;</span><span class="p">,</span> <span class="kc">False</span><span class="p">)</span>
         <span class="n">key_list</span> <span class="o">=</span> <span class="p">[</span><span class="n">key</span> <span class="k">for</span> <span class="n">key</span> <span class="ow">in</span> <span class="n">SUPPORTED_GROUPS_ALL</span> <span class="k">if</span> <span class="n">key</span> <span class="ow">in</span> <span class="n">kwargs</span><span class="p">]</span>
         <span class="k">for</span> <span class="n">key</span> <span class="ow">in</span> <span class="n">kwargs</span><span class="p">:</span>
@@ -300,7 +334,7 @@
             <span class="k">if</span> <span class="n">dataset</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
                 <span class="k">continue</span>
             <span class="k">elif</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">dataset</span><span class="p">,</span> <span class="p">(</span><span class="nb">list</span><span class="p">,</span> <span class="nb">tuple</span><span class="p">)):</span>
-                <span class="n">dataset</span><span class="p">,</span> <span class="n">dataset_warmup</span> <span class="o">=</span> <span class="n">kwargs</span><span class="p">[</span><span class="n">key</span><span class="p">]</span>
+                <span class="n">dataset</span><span class="p">,</span> <span class="n">dataset_warmup</span> <span class="o">=</span> <span class="n">dataset</span>
             <span class="k">elif</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">dataset</span><span class="p">,</span> <span class="n">xr</span><span class="o">.</span><span class="n">Dataset</span><span class="p">):</span>
                 <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span>
                     <span class="s2">&quot;Arguments to InferenceData must be xarray Datasets &quot;</span>
@@ -320,7 +354,7 @@
                     <span class="nb">setattr</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">key</span><span class="p">,</span> <span class="n">dataset_warmup</span><span class="p">)</span>
                     <span class="bp">self</span><span class="o">.</span><span class="n">_groups_warmup</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">key</span><span class="p">)</span></div>
 
-    <span class="k">def</span> <span class="fm">__repr__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="k">def</span> <span class="fm">__repr__</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
         <span class="sd">&quot;&quot;&quot;Make string representation of InferenceData object.&quot;&quot;&quot;</span>
         <span class="n">msg</span> <span class="o">=</span> <span class="s2">&quot;Inference data with groups:</span><span class="se">\n\t</span><span class="s2">&gt; </span><span class="si">{options}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span>
             <span class="n">options</span><span class="o">=</span><span class="s2">&quot;</span><span class="se">\n\t</span><span class="s2">&gt; &quot;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_groups</span><span class="p">)</span>
@@ -329,7 +363,7 @@
             <span class="n">msg</span> <span class="o">+=</span> <span class="s2">&quot;</span><span class="se">\n\n</span><span class="s2">Warmup iterations saved (</span><span class="si">{}</span><span class="s2">*).&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">WARMUP_TAG</span><span class="p">)</span>
         <span class="k">return</span> <span class="n">msg</span>
 
-    <span class="k">def</span> <span class="nf">_repr_html_</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">_repr_html_</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
         <span class="sd">&quot;&quot;&quot;Make html representation of InferenceData object.&quot;&quot;&quot;</span>
         <span class="k">try</span><span class="p">:</span>
             <span class="kn">from</span> <span class="nn">xarray.core.options</span> <span class="kn">import</span> <span class="n">OPTIONS</span>
@@ -359,7 +393,7 @@
             <span class="n">html_repr</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;&lt;pre&gt;</span><span class="si">{</span><span class="n">escape</span><span class="p">(</span><span class="nb">repr</span><span class="p">(</span><span class="bp">self</span><span class="p">))</span><span class="si">}</span><span class="s2">&lt;/pre&gt;&quot;</span>
         <span class="k">return</span> <span class="n">html_repr</span>
 
-    <span class="k">def</span> <span class="fm">__delattr__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">group</span><span class="p">):</span>
+    <span class="k">def</span> <span class="fm">__delattr__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">group</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
         <span class="sd">&quot;&quot;&quot;Delete a group from the InferenceData object.&quot;&quot;&quot;</span>
         <span class="k">if</span> <span class="n">group</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">_groups</span><span class="p">:</span>
             <span class="bp">self</span><span class="o">.</span><span class="n">_groups</span><span class="o">.</span><span class="n">remove</span><span class="p">(</span><span class="n">group</span><span class="p">)</span>
@@ -368,36 +402,103 @@
         <span class="nb">object</span><span class="o">.</span><span class="fm">__delattr__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">group</span><span class="p">)</span>
 
     <span class="nd">@property</span>
-    <span class="k">def</span> <span class="nf">_groups_all</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">_groups_all</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">List</span><span class="p">[</span><span class="nb">str</span><span class="p">]:</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_groups</span> <span class="o">+</span> <span class="bp">self</span><span class="o">.</span><span class="n">_groups_warmup</span>
 
-    <span class="k">def</span> <span class="fm">__iter__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="k">def</span> <span class="fm">__len__</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">int</span><span class="p">:</span>
+        <span class="sd">&quot;&quot;&quot;Return the number of groups in this InferenceData object.&quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_groups_all</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="fm">__iter__</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Iterator</span><span class="p">[</span><span class="nb">str</span><span class="p">]:</span>
         <span class="sd">&quot;&quot;&quot;Iterate over groups in InferenceData object.&quot;&quot;&quot;</span>
         <span class="k">for</span> <span class="n">group</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">_groups_all</span><span class="p">:</span>
             <span class="k">yield</span> <span class="n">group</span>
 
-    <span class="k">def</span> <span class="fm">__getitem__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">key</span><span class="p">):</span>
+    <span class="k">def</span> <span class="fm">__contains__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">key</span><span class="p">:</span> <span class="nb">object</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">bool</span><span class="p">:</span>
+        <span class="sd">&quot;&quot;&quot;Return True if the named item is present, and False otherwise.&quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="n">key</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">_groups_all</span>
+
+    <span class="k">def</span> <span class="fm">__getitem__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">key</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">xr</span><span class="o">.</span><span class="n">Dataset</span><span class="p">:</span>
         <span class="sd">&quot;&quot;&quot;Get item by key.&quot;&quot;&quot;</span>
         <span class="k">if</span> <span class="n">key</span> <span class="ow">not</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">_groups_all</span><span class="p">:</span>
             <span class="k">raise</span> <span class="ne">KeyError</span><span class="p">(</span><span class="n">key</span><span class="p">)</span>
         <span class="k">return</span> <span class="nb">getattr</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">key</span><span class="p">)</span>
 
-<div class="viewcode-block" id="InferenceData.groups"><a class="viewcode-back" href="../../../api/generated/arviz.InferenceData.groups.html#arviz.InferenceData.groups">[docs]</a>    <span class="k">def</span> <span class="nf">groups</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<div class="viewcode-block" id="InferenceData.groups"><a class="viewcode-back" href="../../../api/generated/arviz.InferenceData.groups.html#arviz.InferenceData.groups">[docs]</a>    <span class="k">def</span> <span class="nf">groups</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">List</span><span class="p">[</span><span class="nb">str</span><span class="p">]:</span>
         <span class="sd">&quot;&quot;&quot;Return all groups present in InferenceData object.&quot;&quot;&quot;</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_groups_all</span></div>
 
-<div class="viewcode-block" id="InferenceData.values"><a class="viewcode-back" href="../../../api/generated/arviz.InferenceData.values.html#arviz.InferenceData.values">[docs]</a>    <span class="k">def</span> <span class="nf">values</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;Xarray Datasets present in InferenceData object.&quot;&quot;&quot;</span>
-        <span class="k">for</span> <span class="n">group</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">_groups_all</span><span class="p">:</span>
-            <span class="k">yield</span> <span class="nb">getattr</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">group</span><span class="p">)</span></div>
+    <span class="k">class</span> <span class="nc">InferenceDataValuesView</span><span class="p">(</span><span class="n">ValuesView</span><span class="p">[</span><span class="n">xr</span><span class="o">.</span><span class="n">Dataset</span><span class="p">]):</span>
+        <span class="sd">&quot;&quot;&quot;ValuesView implementation for InferenceData, to allow it to implement Mapping.&quot;&quot;&quot;</span>
 
-<div class="viewcode-block" id="InferenceData.items"><a class="viewcode-back" href="../../../api/generated/arviz.InferenceData.items.html#arviz.InferenceData.items">[docs]</a>    <span class="k">def</span> <span class="nf">items</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;Yield groups and corresponding datasets present in InferenceData object.&quot;&quot;&quot;</span>
-        <span class="k">for</span> <span class="n">group</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">_groups_all</span><span class="p">:</span>
-            <span class="k">yield</span> <span class="p">(</span><span class="n">group</span><span class="p">,</span> <span class="nb">getattr</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">group</span><span class="p">))</span></div>
+        <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">parent</span><span class="p">:</span> <span class="s2">&quot;InferenceData&quot;</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="sd">&quot;&quot;&quot;Create a new InferenceDataValuesView from an InferenceData object.&quot;&quot;&quot;</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">parent</span> <span class="o">=</span> <span class="n">parent</span>
+
+        <span class="k">def</span> <span class="fm">__len__</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">int</span><span class="p">:</span>
+            <span class="sd">&quot;&quot;&quot;Return the number of groups in the parent InferenceData.&quot;&quot;&quot;</span>
+            <span class="k">return</span> <span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">parent</span><span class="o">.</span><span class="n">_groups_all</span><span class="p">)</span>
+
+        <span class="k">def</span> <span class="fm">__iter__</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Iterator</span><span class="p">[</span><span class="n">xr</span><span class="o">.</span><span class="n">Dataset</span><span class="p">]:</span>
+            <span class="sd">&quot;&quot;&quot;Iterate through the Xarray datasets present in the InferenceData object.&quot;&quot;&quot;</span>
+            <span class="n">parent</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">parent</span>
+            <span class="k">for</span> <span class="n">group</span> <span class="ow">in</span> <span class="n">parent</span><span class="o">.</span><span class="n">_groups_all</span><span class="p">:</span>
+                <span class="k">yield</span> <span class="nb">getattr</span><span class="p">(</span><span class="n">parent</span><span class="p">,</span> <span class="n">group</span><span class="p">)</span>
+
+        <span class="k">def</span> <span class="fm">__contains__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">key</span><span class="p">:</span> <span class="nb">object</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">bool</span><span class="p">:</span>
+            <span class="sd">&quot;&quot;&quot;Return True if the given Xarray dataset is one of the values, and False otherwise.&quot;&quot;&quot;</span>
+            <span class="k">if</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">key</span><span class="p">,</span> <span class="n">xr</span><span class="o">.</span><span class="n">Dataset</span><span class="p">):</span>
+                <span class="k">return</span> <span class="kc">False</span>
+
+            <span class="k">for</span> <span class="n">dataset</span> <span class="ow">in</span> <span class="bp">self</span><span class="p">:</span>
+                <span class="k">if</span> <span class="n">dataset</span><span class="o">.</span><span class="n">equals</span><span class="p">(</span><span class="n">key</span><span class="p">):</span>
+                    <span class="k">return</span> <span class="kc">True</span>
+
+            <span class="k">return</span> <span class="kc">False</span>
+
+<div class="viewcode-block" id="InferenceData.values"><a class="viewcode-back" href="../../../api/generated/arviz.InferenceData.values.html#arviz.InferenceData.values">[docs]</a>    <span class="k">def</span> <span class="nf">values</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="s2">&quot;InferenceData.InferenceDataValuesView&quot;</span><span class="p">:</span>
+        <span class="sd">&quot;&quot;&quot;Return a view over the Xarray Datasets present in the InferenceData object.&quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="n">InferenceData</span><span class="o">.</span><span class="n">InferenceDataValuesView</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span></div>
+
+    <span class="k">class</span> <span class="nc">InferenceDataItemsView</span><span class="p">(</span><span class="n">ItemsView</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">xr</span><span class="o">.</span><span class="n">Dataset</span><span class="p">]):</span>
+        <span class="sd">&quot;&quot;&quot;ItemsView implementation for InferenceData, to allow it to implement Mapping.&quot;&quot;&quot;</span>
+
+        <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">parent</span><span class="p">:</span> <span class="s2">&quot;InferenceData&quot;</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="sd">&quot;&quot;&quot;Create a new InferenceDataItemsView from an InferenceData object.&quot;&quot;&quot;</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">parent</span> <span class="o">=</span> <span class="n">parent</span>
+
+        <span class="k">def</span> <span class="fm">__len__</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">int</span><span class="p">:</span>
+            <span class="sd">&quot;&quot;&quot;Return the number of groups in the parent InferenceData.&quot;&quot;&quot;</span>
+            <span class="k">return</span> <span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">parent</span><span class="o">.</span><span class="n">_groups_all</span><span class="p">)</span>
+
+        <span class="k">def</span> <span class="fm">__iter__</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Iterator</span><span class="p">[</span><span class="n">Tuple</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">xr</span><span class="o">.</span><span class="n">Dataset</span><span class="p">]]:</span>
+            <span class="sd">&quot;&quot;&quot;Iterate through the groups and corresponding Xarray datasets in the InferenceData.&quot;&quot;&quot;</span>
+            <span class="n">parent</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">parent</span>
+            <span class="k">for</span> <span class="n">group</span> <span class="ow">in</span> <span class="n">parent</span><span class="o">.</span><span class="n">_groups_all</span><span class="p">:</span>
+                <span class="k">yield</span> <span class="n">group</span><span class="p">,</span> <span class="nb">getattr</span><span class="p">(</span><span class="n">parent</span><span class="p">,</span> <span class="n">group</span><span class="p">)</span>
+
+        <span class="k">def</span> <span class="fm">__contains__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">key</span><span class="p">:</span> <span class="nb">object</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">bool</span><span class="p">:</span>
+            <span class="sd">&quot;&quot;&quot;Return True if the (group, dataset) tuple is present, and False otherwise.&quot;&quot;&quot;</span>
+            <span class="n">parent</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">parent</span>
+            <span class="k">if</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">key</span><span class="p">,</span> <span class="nb">tuple</span><span class="p">)</span> <span class="ow">or</span> <span class="nb">len</span><span class="p">(</span><span class="n">key</span><span class="p">)</span> <span class="o">!=</span> <span class="mi">2</span><span class="p">:</span>
+                <span class="k">return</span> <span class="kc">False</span>
+
+            <span class="n">group</span><span class="p">,</span> <span class="n">dataset</span> <span class="o">=</span> <span class="n">key</span>
+            <span class="k">if</span> <span class="n">group</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">parent</span><span class="o">.</span><span class="n">_groups_all</span><span class="p">:</span>
+                <span class="k">return</span> <span class="kc">False</span>
+
+            <span class="k">if</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">dataset</span><span class="p">,</span> <span class="n">xr</span><span class="o">.</span><span class="n">Dataset</span><span class="p">):</span>
+                <span class="k">return</span> <span class="kc">False</span>
+
+            <span class="n">existing_dataset</span> <span class="o">=</span> <span class="nb">getattr</span><span class="p">(</span><span class="n">parent</span><span class="p">,</span> <span class="n">group</span><span class="p">)</span>
+            <span class="k">return</span> <span class="n">existing_dataset</span><span class="o">.</span><span class="n">equals</span><span class="p">(</span><span class="n">dataset</span><span class="p">)</span>
+
+<div class="viewcode-block" id="InferenceData.items"><a class="viewcode-back" href="../../../api/generated/arviz.InferenceData.items.html#arviz.InferenceData.items">[docs]</a>    <span class="k">def</span> <span class="nf">items</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="s2">&quot;InferenceData.InferenceDataItemsView&quot;</span><span class="p">:</span>
+        <span class="sd">&quot;&quot;&quot;Return a view over the groups and datasets present in the InferenceData object.&quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="n">InferenceData</span><span class="o">.</span><span class="n">InferenceDataItemsView</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span></div>
 
 <div class="viewcode-block" id="InferenceData.from_netcdf"><a class="viewcode-back" href="../../../api/generated/arviz.InferenceData.from_netcdf.html#arviz.InferenceData.from_netcdf">[docs]</a>    <span class="nd">@staticmethod</span>
-    <span class="k">def</span> <span class="nf">from_netcdf</span><span class="p">(</span><span class="n">filename</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">from_netcdf</span><span class="p">(</span><span class="n">filename</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="s2">&quot;InferenceData&quot;</span><span class="p">:</span>
         <span class="sd">&quot;&quot;&quot;Initialize object from a netcdf file.</span>
 
 <span class="sd">        Expects that the file will have groups, each of which can be loaded by xarray.</span>
@@ -426,7 +527,9 @@
                     <span class="n">groups</span><span class="p">[</span><span class="n">group</span><span class="p">]</span> <span class="o">=</span> <span class="n">data</span>
         <span class="k">return</span> <span class="n">InferenceData</span><span class="p">(</span><span class="o">**</span><span class="n">groups</span><span class="p">)</span></div>
 
-<div class="viewcode-block" id="InferenceData.to_netcdf"><a class="viewcode-back" href="../../../api/generated/arviz.InferenceData.to_netcdf.html#arviz.InferenceData.to_netcdf">[docs]</a>    <span class="k">def</span> <span class="nf">to_netcdf</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">filename</span><span class="p">,</span> <span class="n">compress</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">groups</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+<div class="viewcode-block" id="InferenceData.to_netcdf"><a class="viewcode-back" href="../../../api/generated/arviz.InferenceData.to_netcdf.html#arviz.InferenceData.to_netcdf">[docs]</a>    <span class="k">def</span> <span class="nf">to_netcdf</span><span class="p">(</span>
+        <span class="bp">self</span><span class="p">,</span> <span class="n">filename</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">compress</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">True</span><span class="p">,</span> <span class="n">groups</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">List</span><span class="p">[</span><span class="nb">str</span><span class="p">]]</span> <span class="o">=</span> <span class="kc">None</span>
+    <span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
         <span class="sd">&quot;&quot;&quot;Write InferenceData to file using netcdf4.</span>
 
 <span class="sd">        Parameters</span>
@@ -566,7 +669,7 @@
         <span class="n">include_index</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
         <span class="n">index_origin</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
     <span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;Convert InferenceData to a pandas DataFrame following xarray naming conventions.</span>
+        <span class="sd">&quot;&quot;&quot;Convert InferenceData to a :class:`pandas.DataFrame` following xarray naming conventions.</span>
 
 <span class="sd">        This returns dataframe in a &quot;wide&quot; -format, where each item in ndimensional array is</span>
 <span class="sd">        unpacked. To access &quot;tidy&quot; -format, use xarray functionality found for each dataset.</span>
@@ -675,18 +778,18 @@
             <span class="p">(</span><span class="n">dfs</span><span class="p">,)</span> <span class="o">=</span> <span class="n">dfs</span><span class="o">.</span><span class="n">values</span><span class="p">()</span>
         <span class="k">return</span> <span class="n">dfs</span></div>
 
-    <span class="k">def</span> <span class="fm">__add__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">other</span><span class="p">):</span>
+    <span class="k">def</span> <span class="fm">__add__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">other</span><span class="p">:</span> <span class="s2">&quot;InferenceData&quot;</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="s2">&quot;InferenceData&quot;</span><span class="p">:</span>
         <span class="sd">&quot;&quot;&quot;Concatenate two InferenceData objects.&quot;&quot;&quot;</span>
         <span class="k">return</span> <span class="n">concat</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">other</span><span class="p">,</span> <span class="n">copy</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">inplace</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
 
 <div class="viewcode-block" id="InferenceData.sel"><a class="viewcode-back" href="../../../api/generated/arviz.InferenceData.sel.html#arviz.InferenceData.sel">[docs]</a>    <span class="k">def</span> <span class="nf">sel</span><span class="p">(</span>
-        <span class="bp">self</span><span class="p">,</span>
-        <span class="n">groups</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
-        <span class="n">filter_groups</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
-        <span class="n">inplace</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
-        <span class="n">chain_prior</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
-        <span class="o">**</span><span class="n">kwargs</span><span class="p">,</span>
-    <span class="p">):</span>
+        <span class="bp">self</span><span class="p">:</span> <span class="n">InferenceDataT</span><span class="p">,</span>
+        <span class="n">groups</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">Union</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">List</span><span class="p">[</span><span class="nb">str</span><span class="p">]]]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+        <span class="n">filter_groups</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="s2">&quot;Literal[&#39;like&#39;, &#39;regex&#39;]&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+        <span class="n">inplace</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span><span class="p">,</span>
+        <span class="n">chain_prior</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">bool</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+        <span class="o">**</span><span class="n">kwargs</span><span class="p">:</span> <span class="n">Any</span><span class="p">,</span>
+    <span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Optional</span><span class="p">[</span><span class="n">InferenceDataT</span><span class="p">]:</span>
         <span class="sd">&quot;&quot;&quot;Perform an xarray selection on all groups.</span>
 
 <span class="sd">        Loops groups to perform Dataset.sel(key=item)</span>
@@ -744,6 +847,11 @@
 <span class="sd">               ...: print(idata_subset.posterior_predictive.coords)</span>
 <span class="sd">               ...: print(idata_subset.observed_data.coords)</span>
 
+<span class="sd">        See Also</span>
+<span class="sd">        --------</span>
+<span class="sd">        xarray.Dataset.sel : Returns a new dataset with each array indexed by tick labels along</span>
+<span class="sd">            the specified dimension(s).</span>
+<span class="sd">        isel : Returns a new dataset with each array indexed along the specified dimension(s).</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="k">if</span> <span class="n">chain_prior</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
             <span class="n">warnings</span><span class="o">.</span><span class="n">warn</span><span class="p">(</span>
@@ -753,10 +861,10 @@
             <span class="p">)</span>
         <span class="k">else</span><span class="p">:</span>
             <span class="n">chain_prior</span> <span class="o">=</span> <span class="kc">False</span>
-        <span class="n">groups</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_group_names</span><span class="p">(</span><span class="n">groups</span><span class="p">,</span> <span class="n">filter_groups</span><span class="p">)</span>
+        <span class="n">group_names</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_group_names</span><span class="p">(</span><span class="n">groups</span><span class="p">,</span> <span class="n">filter_groups</span><span class="p">)</span>
 
         <span class="n">out</span> <span class="o">=</span> <span class="bp">self</span> <span class="k">if</span> <span class="n">inplace</span> <span class="k">else</span> <span class="n">deepcopy</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span>
-        <span class="k">for</span> <span class="n">group</span> <span class="ow">in</span> <span class="n">groups</span><span class="p">:</span>
+        <span class="k">for</span> <span class="n">group</span> <span class="ow">in</span> <span class="n">group_names</span><span class="p">:</span>
             <span class="n">dataset</span> <span class="o">=</span> <span class="nb">getattr</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">group</span><span class="p">)</span>
             <span class="n">valid_keys</span> <span class="o">=</span> <span class="nb">set</span><span class="p">(</span><span class="n">kwargs</span><span class="o">.</span><span class="n">keys</span><span class="p">())</span><span class="o">.</span><span class="n">intersection</span><span class="p">(</span><span class="n">dataset</span><span class="o">.</span><span class="n">dims</span><span class="p">)</span>
             <span class="k">if</span> <span class="ow">not</span> <span class="n">chain_prior</span> <span class="ow">and</span> <span class="s2">&quot;prior&quot;</span> <span class="ow">in</span> <span class="n">group</span><span class="p">:</span>
@@ -769,12 +877,12 @@
             <span class="k">return</span> <span class="n">out</span></div>
 
 <div class="viewcode-block" id="InferenceData.isel"><a class="viewcode-back" href="../../../api/generated/arviz.InferenceData.isel.html#arviz.InferenceData.isel">[docs]</a>    <span class="k">def</span> <span class="nf">isel</span><span class="p">(</span>
-        <span class="bp">self</span><span class="p">,</span>
-        <span class="n">groups</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
-        <span class="n">filter_groups</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
-        <span class="n">inplace</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
-        <span class="o">**</span><span class="n">kwargs</span><span class="p">,</span>
-    <span class="p">):</span>
+        <span class="bp">self</span><span class="p">:</span> <span class="n">InferenceDataT</span><span class="p">,</span>
+        <span class="n">groups</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">Union</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">List</span><span class="p">[</span><span class="nb">str</span><span class="p">]]]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+        <span class="n">filter_groups</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="s2">&quot;Literal[&#39;like&#39;, &#39;regex&#39;]&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+        <span class="n">inplace</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span><span class="p">,</span>
+        <span class="o">**</span><span class="n">kwargs</span><span class="p">:</span> <span class="n">Any</span><span class="p">,</span>
+    <span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Optional</span><span class="p">[</span><span class="n">InferenceDataT</span><span class="p">]:</span>
         <span class="sd">&quot;&quot;&quot;Perform an xarray selection on all groups.</span>
 
 <span class="sd">        Loops groups to perform Dataset.isel(key=item)</span>
@@ -806,11 +914,40 @@
 <span class="sd">            A new InferenceData object by default.</span>
 <span class="sd">            When `inplace==True` perform selection in-place and return `None`</span>
 
+<span class="sd">        Examples</span>
+<span class="sd">        --------</span>
+<span class="sd">        Use ``isel`` to discard one chain of the InferenceData object. We first check the</span>
+<span class="sd">        dimensions of the original object:</span>
+
+<span class="sd">        .. ipython::</span>
+
+<span class="sd">            In [1]: import arviz as az</span>
+<span class="sd">               ...: idata = az.load_arviz_data(&quot;centered_eight&quot;)</span>
+<span class="sd">               ...: del idata.prior  # prior group only has 1 chain currently</span>
+<span class="sd">               ...: print(idata.posterior.coords)</span>
+<span class="sd">               ...: print(idata.posterior_predictive.coords)</span>
+<span class="sd">               ...: print(idata.observed_data.coords)</span>
+
+<span class="sd">        In order to remove the third chain:</span>
+
+<span class="sd">        .. ipython::</span>
+
+<span class="sd">            In [1]: idata_subset = idata.isel(chain=[0, 1, 3])</span>
+<span class="sd">               ...: print(idata_subset.posterior.coords)</span>
+<span class="sd">               ...: print(idata_subset.posterior_predictive.coords)</span>
+<span class="sd">               ...: print(idata_subset.observed_data.coords)</span>
+
+<span class="sd">        See Also</span>
+<span class="sd">        --------</span>
+<span class="sd">        xarray.Dataset.isel : Returns a new dataset with each array indexed along the specified</span>
+<span class="sd">            dimension(s).</span>
+<span class="sd">        sel : Returns a new dataset with each array indexed by tick labels along the specified</span>
+<span class="sd">            dimension(s).</span>
 <span class="sd">        &quot;&quot;&quot;</span>
-        <span class="n">groups</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_group_names</span><span class="p">(</span><span class="n">groups</span><span class="p">,</span> <span class="n">filter_groups</span><span class="p">)</span>
+        <span class="n">group_names</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_group_names</span><span class="p">(</span><span class="n">groups</span><span class="p">,</span> <span class="n">filter_groups</span><span class="p">)</span>
 
         <span class="n">out</span> <span class="o">=</span> <span class="bp">self</span> <span class="k">if</span> <span class="n">inplace</span> <span class="k">else</span> <span class="n">deepcopy</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span>
-        <span class="k">for</span> <span class="n">group</span> <span class="ow">in</span> <span class="n">groups</span><span class="p">:</span>
+        <span class="k">for</span> <span class="n">group</span> <span class="ow">in</span> <span class="n">group_names</span><span class="p">:</span>
             <span class="n">dataset</span> <span class="o">=</span> <span class="nb">getattr</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">group</span><span class="p">)</span>
             <span class="n">valid_keys</span> <span class="o">=</span> <span class="nb">set</span><span class="p">(</span><span class="n">kwargs</span><span class="o">.</span><span class="n">keys</span><span class="p">())</span><span class="o">.</span><span class="n">intersection</span><span class="p">(</span><span class="n">dataset</span><span class="o">.</span><span class="n">dims</span><span class="p">)</span>
             <span class="n">dataset</span> <span class="o">=</span> <span class="n">dataset</span><span class="o">.</span><span class="n">isel</span><span class="p">(</span><span class="o">**</span><span class="p">{</span><span class="n">key</span><span class="p">:</span> <span class="n">kwargs</span><span class="p">[</span><span class="n">key</span><span class="p">]</span> <span class="k">for</span> <span class="n">key</span> <span class="ow">in</span> <span class="n">valid_keys</span><span class="p">})</span>
@@ -861,6 +998,57 @@
 <span class="sd">            A new InferenceData object by default.</span>
 <span class="sd">            When `inplace==True` perform selection in-place and return `None`</span>
 
+<span class="sd">        Examples</span>
+<span class="sd">        --------</span>
+<span class="sd">        Use ``stack`` to stack any number of existing dimensions into a single new dimension.</span>
+<span class="sd">        We first check the original object:</span>
+
+<span class="sd">        .. ipython::</span>
+
+<span class="sd">            In [1]: import arviz as az</span>
+<span class="sd">               ...: idata = az.load_arviz_data(&quot;rugby&quot;)</span>
+<span class="sd">               ...: idata</span>
+
+<span class="sd">        In order to stack two dimensions ``chain`` and ``draw`` to ``sample``, we can use:</span>
+
+<span class="sd">        .. ipython::</span>
+
+<span class="sd">            In [1]: idata.stack(sample=[&quot;chain&quot;, &quot;draw&quot;], inplace=True)</span>
+<span class="sd">               ...: idata</span>
+
+<span class="sd">        We can also take the example of custom InferenceData object and perform stacking. We first</span>
+<span class="sd">        check the original object:</span>
+
+<span class="sd">        .. ipython::</span>
+
+<span class="sd">            In [1]: import arviz as az</span>
+<span class="sd">               ...: datadict = {</span>
+<span class="sd">               ...:     &quot;a&quot;: np.random.randn(100),</span>
+<span class="sd">               ...:     &quot;b&quot;: np.random.randn(1, 100, 10),</span>
+<span class="sd">               ...:     &quot;c&quot;: np.random.randn(1, 100, 3, 4),</span>
+<span class="sd">               ...: }</span>
+<span class="sd">               ...: coords = {</span>
+<span class="sd">               ...:     &quot;c1&quot;: np.arange(3),</span>
+<span class="sd">               ...:     &quot;c99&quot;: np.arange(4),</span>
+<span class="sd">               ...:     &quot;b1&quot;: np.arange(10),</span>
+<span class="sd">               ...: }</span>
+<span class="sd">               ...: dims = {&quot;c&quot;: [&quot;c1&quot;, &quot;c99&quot;], &quot;b&quot;: [&quot;b1&quot;]}</span>
+<span class="sd">               ...: idata = az.from_dict(</span>
+<span class="sd">               ...:     posterior=datadict, posterior_predictive=datadict, coords=coords, dims=dims</span>
+<span class="sd">               ...: )</span>
+<span class="sd">               ...: idata.posterior</span>
+
+<span class="sd">        In order to stack two dimensions ``c1`` and ``c99`` to ``z``, we can use:</span>
+
+<span class="sd">        .. ipython::</span>
+
+<span class="sd">            In [1]: idata.stack(z=[&quot;c1&quot;, &quot;c99&quot;], inplace=True)</span>
+<span class="sd">               ...: idata.posterior</span>
+
+<span class="sd">        See Also</span>
+<span class="sd">        --------</span>
+<span class="sd">        xarray.Dataset.stack : Stack any number of existing dimensions into a single new dimension.</span>
+<span class="sd">        unstack : Perform an xarray unstacking on all groups of InferenceData object.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="n">groups</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_group_names</span><span class="p">(</span><span class="n">groups</span><span class="p">,</span> <span class="n">filter_groups</span><span class="p">)</span>
 
@@ -911,6 +1099,43 @@
 <span class="sd">            A new InferenceData object by default.</span>
 <span class="sd">            When `inplace==True` perform selection in place and return `None`</span>
 
+<span class="sd">        Examples</span>
+<span class="sd">        --------</span>
+<span class="sd">        Use ``unstack`` to unstack existing dimensions corresponding to MultiIndexes into</span>
+<span class="sd">        multiple new dimensions. We first stack two dimensions ``c1`` and ``c99`` to ``z``:</span>
+
+<span class="sd">        .. ipython::</span>
+
+<span class="sd">            In [1]: import arviz as az</span>
+<span class="sd">               ...: datadict = {</span>
+<span class="sd">               ...:     &quot;a&quot;: np.random.randn(100),</span>
+<span class="sd">               ...:     &quot;b&quot;: np.random.randn(1, 100, 10),</span>
+<span class="sd">               ...:     &quot;c&quot;: np.random.randn(1, 100, 3, 4),</span>
+<span class="sd">               ...: }</span>
+<span class="sd">               ...: coords = {</span>
+<span class="sd">               ...:     &quot;c1&quot;: np.arange(3),</span>
+<span class="sd">               ...:     &quot;c99&quot;: np.arange(4),</span>
+<span class="sd">               ...:     &quot;b1&quot;: np.arange(10),</span>
+<span class="sd">               ...: }</span>
+<span class="sd">               ...: dims = {&quot;c&quot;: [&quot;c1&quot;, &quot;c99&quot;], &quot;b&quot;: [&quot;b1&quot;]}</span>
+<span class="sd">               ...: idata = az.from_dict(</span>
+<span class="sd">               ...:     posterior=datadict, posterior_predictive=datadict, coords=coords, dims=dims</span>
+<span class="sd">               ...: )</span>
+<span class="sd">               ...: idata.stack(z=[&quot;c1&quot;, &quot;c99&quot;], inplace=True)</span>
+<span class="sd">               ...: idata</span>
+
+<span class="sd">        In order to unstack the dimension ``z``, we use:</span>
+
+<span class="sd">        .. ipython::</span>
+
+<span class="sd">            In [1]: idata.unstack(inplace=True)</span>
+<span class="sd">               ...: idata</span>
+
+<span class="sd">        See Also</span>
+<span class="sd">        --------</span>
+<span class="sd">        xarray.Dataset.unstack : Unstack existing dimensions corresponding to MultiIndexes into</span>
+<span class="sd">            multiple new dimensions.</span>
+<span class="sd">        stack : Perform an xarray stacking on all groups of InferenceData object.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="n">groups</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_group_names</span><span class="p">(</span><span class="n">groups</span><span class="p">,</span> <span class="n">filter_groups</span><span class="p">)</span>
         <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">dim</span><span class="p">,</span> <span class="nb">str</span><span class="p">):</span>
@@ -953,13 +1178,36 @@
 <span class="sd">            If ``True``, modify the InferenceData object inplace,</span>
 <span class="sd">            otherwise, return the modified copy.</span>
 
-
 <span class="sd">        Returns</span>
 <span class="sd">        -------</span>
 <span class="sd">        InferenceData</span>
 <span class="sd">            A new InferenceData object by default.</span>
 <span class="sd">            When `inplace==True` perform renaming in-place and return `None`</span>
 
+<span class="sd">        Examples</span>
+<span class="sd">        --------</span>
+<span class="sd">        Use ``rename`` to renaming of variable and dimensions on all groups of the InferenceData</span>
+<span class="sd">        object. We first check the original object:</span>
+
+<span class="sd">        .. ipython::</span>
+
+<span class="sd">            In [1]: import arviz as az</span>
+<span class="sd">               ...: idata = az.load_arviz_data(&quot;rugby&quot;)</span>
+<span class="sd">               ...: idata</span>
+
+<span class="sd">        In order to rename the dimensions and variable, we use:</span>
+
+<span class="sd">        .. ipython::</span>
+
+<span class="sd">            In [1]: idata.rename({&quot;team&quot;: &quot;team_new&quot;, &quot;match&quot;:&quot;match_new&quot;}, inplace=True)</span>
+<span class="sd">               ...: idata</span>
+
+<span class="sd">        See Also</span>
+<span class="sd">        --------</span>
+<span class="sd">        xarray.Dataset.rename : Returns a new object with renamed variables and dimensions.</span>
+<span class="sd">        rename_vars : Perform xarray renaming of variable or coordinate names on all groups of</span>
+<span class="sd">            an InferenceData object.</span>
+<span class="sd">        rename_dims : Perform xarray renaming of dimensions on all groups of InferenceData object.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="n">groups</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_group_names</span><span class="p">(</span><span class="n">groups</span><span class="p">,</span> <span class="n">filter_groups</span><span class="p">)</span>
         <span class="k">if</span> <span class="s2">&quot;chain&quot;</span> <span class="ow">in</span> <span class="n">name_dict</span><span class="o">.</span><span class="n">keys</span><span class="p">()</span> <span class="ow">or</span> <span class="s2">&quot;draw&quot;</span> <span class="ow">in</span> <span class="n">name_dict</span><span class="o">.</span><span class="n">keys</span><span class="p">():</span>
@@ -1010,6 +1258,33 @@
 <span class="sd">            A new InferenceData object with renamed variables including coordinates by default.</span>
 <span class="sd">            When `inplace==True` perform renaming in-place and return `None`</span>
 
+<span class="sd">        Examples</span>
+<span class="sd">        --------</span>
+<span class="sd">        Use ``rename_vars`` to renaming of variable and coordinates on all groups of the</span>
+<span class="sd">        InferenceData object. We first check the data variables of original object:</span>
+
+<span class="sd">        .. ipython::</span>
+
+<span class="sd">            In [1]: import arviz as az</span>
+<span class="sd">               ...: idata = az.load_arviz_data(&quot;rugby&quot;)</span>
+<span class="sd">               ...: print(list(idata.posterior.data_vars))</span>
+<span class="sd">               ...: print(list(idata.prior.data_vars))</span>
+
+<span class="sd">        In order to rename the data variables, we use:</span>
+
+<span class="sd">        .. ipython::</span>
+
+<span class="sd">            In [1]: idata.rename_vars({&quot;home&quot;: &quot;home_new&quot;}, inplace=True)</span>
+<span class="sd">               ...: print(list(idata.posterior.data_vars))</span>
+<span class="sd">               ...: print(list(idata.prior.data_vars))</span>
+
+<span class="sd">        See Also</span>
+<span class="sd">        --------</span>
+<span class="sd">        xarray.Dataset.rename_vars : Returns a new object with renamed variables including</span>
+<span class="sd">            coordinates.</span>
+<span class="sd">        rename : Perform xarray renaming of variable and dimensions on all groups of</span>
+<span class="sd">            an InferenceData object.</span>
+<span class="sd">        rename_dims : Perform xarray renaming of dimensions on all groups of InferenceData object.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="n">groups</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_group_names</span><span class="p">(</span><span class="n">groups</span><span class="p">,</span> <span class="n">filter_groups</span><span class="p">)</span>
 
@@ -1050,13 +1325,39 @@
 <span class="sd">            If ``True``, modify the InferenceData object inplace,</span>
 <span class="sd">            otherwise, return the modified copy.</span>
 
-
 <span class="sd">        Returns</span>
 <span class="sd">        -------</span>
 <span class="sd">        InferenceData</span>
 <span class="sd">            A new InferenceData object with renamed dimension by default.</span>
 <span class="sd">            When `inplace==True` perform renaming in-place and return `None`</span>
 
+<span class="sd">        Examples</span>
+<span class="sd">        --------</span>
+<span class="sd">        Use ``rename_dims`` to renaming of dimensions on all groups of the InferenceData</span>
+<span class="sd">        object. We first check the dimensions of original object:</span>
+
+<span class="sd">        .. ipython::</span>
+
+<span class="sd">            In [1]: import arviz as az</span>
+<span class="sd">               ...: idata = az.load_arviz_data(&quot;rugby&quot;)</span>
+<span class="sd">               ...: print(list(idata.posterior.dims))</span>
+<span class="sd">               ...: print(list(idata.prior.dims))</span>
+
+<span class="sd">        In order to rename the dimensions, we use:</span>
+
+<span class="sd">        .. ipython::</span>
+
+<span class="sd">            In [1]: idata.rename_dims({&quot;team&quot;: &quot;team_new&quot;}, inplace=True)</span>
+<span class="sd">               ...: print(list(idata.posterior.dims))</span>
+<span class="sd">               ...: print(list(idata.prior.dims))</span>
+
+<span class="sd">        See Also</span>
+<span class="sd">        --------</span>
+<span class="sd">        xarray.Dataset.rename_dims : Returns a new object with renamed dimensions only.</span>
+<span class="sd">        rename : Perform xarray renaming of variable and dimensions on all groups of</span>
+<span class="sd">            an InferenceData object.</span>
+<span class="sd">        rename_vars : Perform xarray renaming of variable or coordinate names on all groups</span>
+<span class="sd">            of an InferenceData object.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="n">groups</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_group_names</span><span class="p">(</span><span class="n">groups</span><span class="p">,</span> <span class="n">filter_groups</span><span class="p">)</span>
         <span class="k">if</span> <span class="s2">&quot;chain&quot;</span> <span class="ow">in</span> <span class="n">name_dict</span><span class="o">.</span><span class="n">keys</span><span class="p">()</span> <span class="ow">or</span> <span class="s2">&quot;draw&quot;</span> <span class="ow">in</span> <span class="n">name_dict</span><span class="o">.</span><span class="n">keys</span><span class="p">():</span>
@@ -1172,11 +1473,11 @@
             <span class="k">else</span><span class="p">:</span>
                 <span class="bp">self</span><span class="o">.</span><span class="n">_groups</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">group</span><span class="p">)</span></div>
 
-    <span class="n">set_index</span> <span class="o">=</span> <span class="n">_extend_xr_method</span><span class="p">(</span><span class="n">xr</span><span class="o">.</span><span class="n">Dataset</span><span class="o">.</span><span class="n">set_index</span><span class="p">)</span>
+    <span class="n">set_index</span> <span class="o">=</span> <span class="n">_extend_xr_method</span><span class="p">(</span><span class="n">xr</span><span class="o">.</span><span class="n">Dataset</span><span class="o">.</span><span class="n">set_index</span><span class="p">,</span> <span class="n">see_also</span><span class="o">=</span><span class="s2">&quot;reset_index&quot;</span><span class="p">)</span>
     <span class="n">get_index</span> <span class="o">=</span> <span class="n">_extend_xr_method</span><span class="p">(</span><span class="n">xr</span><span class="o">.</span><span class="n">Dataset</span><span class="o">.</span><span class="n">get_index</span><span class="p">)</span>
-    <span class="n">reset_index</span> <span class="o">=</span> <span class="n">_extend_xr_method</span><span class="p">(</span><span class="n">xr</span><span class="o">.</span><span class="n">Dataset</span><span class="o">.</span><span class="n">reset_index</span><span class="p">)</span>
-    <span class="n">set_coords</span> <span class="o">=</span> <span class="n">_extend_xr_method</span><span class="p">(</span><span class="n">xr</span><span class="o">.</span><span class="n">Dataset</span><span class="o">.</span><span class="n">set_coords</span><span class="p">)</span>
-    <span class="n">reset_coords</span> <span class="o">=</span> <span class="n">_extend_xr_method</span><span class="p">(</span><span class="n">xr</span><span class="o">.</span><span class="n">Dataset</span><span class="o">.</span><span class="n">reset_coords</span><span class="p">)</span>
+    <span class="n">reset_index</span> <span class="o">=</span> <span class="n">_extend_xr_method</span><span class="p">(</span><span class="n">xr</span><span class="o">.</span><span class="n">Dataset</span><span class="o">.</span><span class="n">reset_index</span><span class="p">,</span> <span class="n">see_also</span><span class="o">=</span><span class="s2">&quot;set_index&quot;</span><span class="p">)</span>
+    <span class="n">set_coords</span> <span class="o">=</span> <span class="n">_extend_xr_method</span><span class="p">(</span><span class="n">xr</span><span class="o">.</span><span class="n">Dataset</span><span class="o">.</span><span class="n">set_coords</span><span class="p">,</span> <span class="n">see_also</span><span class="o">=</span><span class="s2">&quot;reset_coords&quot;</span><span class="p">)</span>
+    <span class="n">reset_coords</span> <span class="o">=</span> <span class="n">_extend_xr_method</span><span class="p">(</span><span class="n">xr</span><span class="o">.</span><span class="n">Dataset</span><span class="o">.</span><span class="n">reset_coords</span><span class="p">,</span> <span class="n">see_also</span><span class="o">=</span><span class="s2">&quot;set_coords&quot;</span><span class="p">)</span>
     <span class="n">assign</span> <span class="o">=</span> <span class="n">_extend_xr_method</span><span class="p">(</span><span class="n">xr</span><span class="o">.</span><span class="n">Dataset</span><span class="o">.</span><span class="n">assign</span><span class="p">)</span>
     <span class="n">assign_coords</span> <span class="o">=</span> <span class="n">_extend_xr_method</span><span class="p">(</span><span class="n">xr</span><span class="o">.</span><span class="n">Dataset</span><span class="o">.</span><span class="n">assign_coords</span><span class="p">)</span>
     <span class="n">sortby</span> <span class="o">=</span> <span class="n">_extend_xr_method</span><span class="p">(</span><span class="n">xr</span><span class="o">.</span><span class="n">Dataset</span><span class="o">.</span><span class="n">sortby</span><span class="p">)</span>
@@ -1185,16 +1486,22 @@
     <span class="n">load</span> <span class="o">=</span> <span class="n">_extend_xr_method</span><span class="p">(</span><span class="n">xr</span><span class="o">.</span><span class="n">Dataset</span><span class="o">.</span><span class="n">load</span><span class="p">)</span>
     <span class="n">compute</span> <span class="o">=</span> <span class="n">_extend_xr_method</span><span class="p">(</span><span class="n">xr</span><span class="o">.</span><span class="n">Dataset</span><span class="o">.</span><span class="n">compute</span><span class="p">)</span>
     <span class="n">persist</span> <span class="o">=</span> <span class="n">_extend_xr_method</span><span class="p">(</span><span class="n">xr</span><span class="o">.</span><span class="n">Dataset</span><span class="o">.</span><span class="n">persist</span><span class="p">)</span>
-
-    <span class="n">mean</span> <span class="o">=</span> <span class="n">_extend_xr_method</span><span class="p">(</span><span class="n">xr</span><span class="o">.</span><span class="n">Dataset</span><span class="o">.</span><span class="n">mean</span><span class="p">)</span>
-    <span class="n">median</span> <span class="o">=</span> <span class="n">_extend_xr_method</span><span class="p">(</span><span class="n">xr</span><span class="o">.</span><span class="n">Dataset</span><span class="o">.</span><span class="n">median</span><span class="p">)</span>
-    <span class="nb">min</span> <span class="o">=</span> <span class="n">_extend_xr_method</span><span class="p">(</span><span class="n">xr</span><span class="o">.</span><span class="n">Dataset</span><span class="o">.</span><span class="n">min</span><span class="p">)</span>
-    <span class="nb">max</span> <span class="o">=</span> <span class="n">_extend_xr_method</span><span class="p">(</span><span class="n">xr</span><span class="o">.</span><span class="n">Dataset</span><span class="o">.</span><span class="n">max</span><span class="p">)</span>
-    <span class="n">cumsum</span> <span class="o">=</span> <span class="n">_extend_xr_method</span><span class="p">(</span><span class="n">xr</span><span class="o">.</span><span class="n">Dataset</span><span class="o">.</span><span class="n">cumsum</span><span class="p">)</span>
-    <span class="nb">sum</span> <span class="o">=</span> <span class="n">_extend_xr_method</span><span class="p">(</span><span class="n">xr</span><span class="o">.</span><span class="n">Dataset</span><span class="o">.</span><span class="n">sum</span><span class="p">)</span>
     <span class="n">quantile</span> <span class="o">=</span> <span class="n">_extend_xr_method</span><span class="p">(</span><span class="n">xr</span><span class="o">.</span><span class="n">Dataset</span><span class="o">.</span><span class="n">quantile</span><span class="p">)</span>
 
-    <span class="k">def</span> <span class="nf">_group_names</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">groups</span><span class="p">,</span> <span class="n">filter_groups</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+    <span class="c1"># The following lines use methods on xr.Dataset that are dynamically defined and attached.</span>
+    <span class="c1"># As a result mypy cannot see them, so we have to suppress the resulting mypy errors.</span>
+    <span class="n">mean</span> <span class="o">=</span> <span class="n">_extend_xr_method</span><span class="p">(</span><span class="n">xr</span><span class="o">.</span><span class="n">Dataset</span><span class="o">.</span><span class="n">mean</span><span class="p">,</span> <span class="n">see_also</span><span class="o">=</span><span class="s2">&quot;median&quot;</span><span class="p">)</span>  <span class="c1"># type: ignore[attr-defined]</span>
+    <span class="n">median</span> <span class="o">=</span> <span class="n">_extend_xr_method</span><span class="p">(</span><span class="n">xr</span><span class="o">.</span><span class="n">Dataset</span><span class="o">.</span><span class="n">median</span><span class="p">,</span> <span class="n">see_also</span><span class="o">=</span><span class="s2">&quot;mean&quot;</span><span class="p">)</span>  <span class="c1"># type: ignore[attr-defined]</span>
+    <span class="nb">min</span> <span class="o">=</span> <span class="n">_extend_xr_method</span><span class="p">(</span><span class="n">xr</span><span class="o">.</span><span class="n">Dataset</span><span class="o">.</span><span class="n">min</span><span class="p">,</span> <span class="n">see_also</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;max&quot;</span><span class="p">,</span> <span class="s2">&quot;sum&quot;</span><span class="p">])</span>  <span class="c1"># type: ignore[attr-defined]</span>
+    <span class="nb">max</span> <span class="o">=</span> <span class="n">_extend_xr_method</span><span class="p">(</span><span class="n">xr</span><span class="o">.</span><span class="n">Dataset</span><span class="o">.</span><span class="n">max</span><span class="p">,</span> <span class="n">see_also</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;min&quot;</span><span class="p">,</span> <span class="s2">&quot;sum&quot;</span><span class="p">])</span>  <span class="c1"># type: ignore[attr-defined]</span>
+    <span class="n">cumsum</span> <span class="o">=</span> <span class="n">_extend_xr_method</span><span class="p">(</span><span class="n">xr</span><span class="o">.</span><span class="n">Dataset</span><span class="o">.</span><span class="n">cumsum</span><span class="p">,</span> <span class="n">see_also</span><span class="o">=</span><span class="s2">&quot;sum&quot;</span><span class="p">)</span>  <span class="c1"># type: ignore[attr-defined]</span>
+    <span class="nb">sum</span> <span class="o">=</span> <span class="n">_extend_xr_method</span><span class="p">(</span><span class="n">xr</span><span class="o">.</span><span class="n">Dataset</span><span class="o">.</span><span class="n">sum</span><span class="p">,</span> <span class="n">see_also</span><span class="o">=</span><span class="s2">&quot;cumsum&quot;</span><span class="p">)</span>  <span class="c1"># type: ignore[attr-defined]</span>
+
+    <span class="k">def</span> <span class="nf">_group_names</span><span class="p">(</span>
+        <span class="bp">self</span><span class="p">,</span>
+        <span class="n">groups</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">Union</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">List</span><span class="p">[</span><span class="nb">str</span><span class="p">]]],</span>
+        <span class="n">filter_groups</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="s2">&quot;Literal[&#39;like&#39;, &#39;regex&#39;]&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+    <span class="p">)</span> <span class="o">-&gt;</span> <span class="n">List</span><span class="p">[</span><span class="nb">str</span><span class="p">]:</span>
         <span class="sd">&quot;&quot;&quot;Handle expansion of group names input across arviz.</span>
 
 <span class="sd">        Parameters</span>
@@ -1393,7 +1700,74 @@
         <span class="k">if</span> <span class="n">inplace</span><span class="p">:</span>
             <span class="k">return</span> <span class="kc">None</span>
         <span class="k">else</span><span class="p">:</span>
-            <span class="k">return</span> <span class="n">out</span></div>
+            <span class="k">return</span> <span class="n">out</span>
+
+<div class="viewcode-block" id="InferenceData.copy"><a class="viewcode-back" href="../../../api/generated/arviz.InferenceData.copy.html#arviz.InferenceData.copy">[docs]</a>    <span class="k">def</span> <span class="nf">copy</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="s2">&quot;InferenceData&quot;</span><span class="p">:</span>
+        <span class="sd">&quot;&quot;&quot;Return a fresh copy of the ``InferenceData`` object.&quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="n">deepcopy</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span></div></div>
+
+
+<span class="nd">@overload</span>
+<span class="k">def</span> <span class="nf">concat</span><span class="p">(</span>
+    <span class="o">*</span><span class="n">args</span><span class="p">,</span>
+    <span class="n">dim</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+    <span class="n">copy</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">True</span><span class="p">,</span>
+    <span class="n">inplace</span><span class="p">:</span> <span class="s2">&quot;Literal[True]&quot;</span><span class="p">,</span>
+    <span class="n">reset_dim</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">True</span><span class="p">,</span>
+<span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+    <span class="sd">&quot;&quot;&quot;Overload definition, see below for docstring.&quot;&quot;&quot;</span>
+    <span class="o">...</span>
+
+
+<span class="nd">@overload</span>
+<span class="k">def</span> <span class="nf">concat</span><span class="p">(</span>
+    <span class="o">*</span><span class="n">args</span><span class="p">,</span>
+    <span class="n">dim</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+    <span class="n">copy</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">True</span><span class="p">,</span>
+    <span class="n">inplace</span><span class="p">:</span> <span class="s2">&quot;Literal[False]&quot;</span><span class="p">,</span>
+    <span class="n">reset_dim</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">True</span><span class="p">,</span>
+<span class="p">)</span> <span class="o">-&gt;</span> <span class="n">InferenceData</span><span class="p">:</span>
+    <span class="sd">&quot;&quot;&quot;Overload definition, see below for docstring.&quot;&quot;&quot;</span>
+    <span class="o">...</span>
+
+
+<span class="nd">@overload</span>
+<span class="k">def</span> <span class="nf">concat</span><span class="p">(</span>
+    <span class="n">ids</span><span class="p">:</span> <span class="n">Iterable</span><span class="p">[</span><span class="n">InferenceData</span><span class="p">],</span>
+    <span class="n">dim</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+    <span class="o">*</span><span class="p">,</span>
+    <span class="n">copy</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">True</span><span class="p">,</span>
+    <span class="n">inplace</span><span class="p">:</span> <span class="s2">&quot;Literal[False]&quot;</span><span class="p">,</span>
+    <span class="n">reset_dim</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">True</span><span class="p">,</span>
+<span class="p">)</span> <span class="o">-&gt;</span> <span class="n">InferenceData</span><span class="p">:</span>
+    <span class="sd">&quot;&quot;&quot;Overload definition, see below for docstring.&quot;&quot;&quot;</span>
+    <span class="o">...</span>
+
+
+<span class="nd">@overload</span>
+<span class="k">def</span> <span class="nf">concat</span><span class="p">(</span>
+    <span class="n">ids</span><span class="p">:</span> <span class="n">Iterable</span><span class="p">[</span><span class="n">InferenceData</span><span class="p">],</span>
+    <span class="n">dim</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+    <span class="o">*</span><span class="p">,</span>
+    <span class="n">copy</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">True</span><span class="p">,</span>
+    <span class="n">inplace</span><span class="p">:</span> <span class="s2">&quot;Literal[True]&quot;</span><span class="p">,</span>
+    <span class="n">reset_dim</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">True</span><span class="p">,</span>
+<span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+    <span class="sd">&quot;&quot;&quot;Overload definition, see below for docstring.&quot;&quot;&quot;</span>
+    <span class="o">...</span>
+
+
+<span class="nd">@overload</span>
+<span class="k">def</span> <span class="nf">concat</span><span class="p">(</span>
+    <span class="n">ids</span><span class="p">:</span> <span class="n">Iterable</span><span class="p">[</span><span class="n">InferenceData</span><span class="p">],</span>
+    <span class="n">dim</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+    <span class="o">*</span><span class="p">,</span>
+    <span class="n">copy</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">True</span><span class="p">,</span>
+    <span class="n">inplace</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span><span class="p">,</span>
+    <span class="n">reset_dim</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">True</span><span class="p">,</span>
+<span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Optional</span><span class="p">[</span><span class="n">InferenceData</span><span class="p">]:</span>
+    <span class="sd">&quot;&quot;&quot;Overload definition, see below for docstring.&quot;&quot;&quot;</span>
+    <span class="o">...</span>
 
 
 <span class="c1"># pylint: disable=protected-access, inconsistent-return-statements</span>
@@ -1764,19 +2138,21 @@
               
           </main>
           
+  
+
 
       </div>
     </div>
 
     
-  <script src="../../../_static/js/index.30270b6e4c972e43c488.js"></script>
+  <script src="../../../_static/js/index.3da636dd464baa7582d2.js"></script>
 
 
     <footer class="footer mt-5 mt-md-0">
   <div class="container">
     <p>
           &copy; Copyright 2018, ArviZ devs.<br/>
-        Created using <a href="http://sphinx-doc.org/">Sphinx</a> 3.2.1.<br/>
+        Created using <a href="http://sphinx-doc.org/">Sphinx</a> 3.4.3.<br/>
     </p>
   </div>
 </footer>

@@ -5,9 +5,9 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Guidelines for Contributing &#8212; ArviZ 0.10.0 documentation</title>
+    <title>Guidelines for Contributing &#8212; ArviZ 0.11.0 documentation</title>
     
-  <link rel="stylesheet" href="../_static/css/index.d431a4ee1c1efae0e38bdfebc22debff.css">
+  <link rel="stylesheet" href="../_static/css/index.73d71520a4ca3b99cfee5594769eaaae.css">
 
     
   <link rel="stylesheet"
@@ -25,18 +25,19 @@
     href="../_static/vendor/lato_latin-ext/1.44.1/index.css">
 
     
-    <link rel="stylesheet" href="../_static/basic.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/basic.css" type="text/css" />
     <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
     
-  <link rel="preload" as="script" href="../_static/js/index.30270b6e4c972e43c488.js">
+  <link rel="preload" as="script" href="../_static/js/index.3da636dd464baa7582d2.js">
 
     <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
     <script src="../_static/jquery.js"></script>
     <script src="../_static/underscore.js"></script>
     <script src="../_static/doctools.js"></script>
-    <script src="../_static/language_data.js"></script>
     <script src="../_static/togglebutton.js"></script>
     <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
     <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
@@ -55,11 +56,11 @@
     <nav class="navbar navbar-light navbar-expand-lg bg-light fixed-top bd-navbar" id="navbar-main">
 <div class="container-xl">
 
-    
     <a class="navbar-brand" href="../index.html">
-      <img src="../_static/logo.png" class="logo" alt="logo">
-    </a>
     
+      <img src="../_static/logo.png" class="logo" alt="logo" />
+    
+    </a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-menu" aria-controls="navbar-menu" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
     </button>
@@ -126,54 +127,54 @@
     <div class="container-xl">
       <div class="row">
           
-          <div class="col-12 col-md-3 bd-sidebar">
-
-<form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+  
+    
+          <div class="col-12 col-md-3 bd-sidebar"><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
   <i class="icon fas fa-search"></i>
   <input type="search" class="form-control" name="q" id="search-input" placeholder="Search the docs ..." aria-label="Search the docs ..." autocomplete="off" >
 </form>
-
-
 <nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
 
-  <div class="bd-toc-item active">
+    <div class="bd-toc-item active">
+    
   
-
-  <ul class="nav bd-sidenav">
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
+    <ul class="nav bd-sidenav">
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
         
           
-              <li class="active">
-                  <a href="">Guidelines for Contributing</a>
-              </li>
+            
+                <li class="active">
+                    <a href="">Guidelines for Contributing</a>
+                </li>
+            
+          
+            
+                <li class="">
+                    <a href="developer_guide.html">Developer Guide</a>
+                </li>
+            
           
         
-          
-              <li class="">
-                  <a href="developer_guide.html">Developer Guide</a>
-              </li>
-          
         
-      
-      
-      
-      
-    </ul>
-
-</nav>
+        
+        
+      </ul>
+  
+  </nav>
           </div>
           
+  
+
 
           
   
@@ -211,6 +212,10 @@
     
         <li class="nav-item toc-entry toc-h4">
             <a href="#in-the-event-of-a-conflict" class="nav-link">In the event of a conflict</a>
+        </li>
+    
+        <li class="nav-item toc-entry toc-h4">
+            <a href="#if-the-issue-ticket-has-someone-assigned-to-it" class="nav-link">If the issue ticket has someone assigned to it</a>
         </li>
     
             </ul>
@@ -284,6 +289,8 @@
 
 
           
+  
+    
           <main class="col-12 col-md-9 col-xl-7 py-md-5 pl-md-5 pr-md-4 bd-content" role="main">
               
               <div>
@@ -298,6 +305,7 @@
 <li><p>Contributing or improving the documentation (<code class="docutils literal notranslate"><span class="pre">docs</span></code>) or examples (<code class="docutils literal notranslate"><span class="pre">arviz/examples</span></code>)</p></li>
 <li><p>Submitting issues related to bugs or desired enhancements</p></li>
 </ul>
+<p>This doc plus extra guidance is also available on <a class="reference external" href="https://arviz-devs.github.io/arviz/contributing/index.html">ArviZ documentation</a></p>
 </div>
 <div class="section" id="opening-issues">
 <h1>Opening issues<a class="headerlink" href="#opening-issues" title="Permalink to this headline">¶</a></h1>
@@ -329,6 +337,10 @@ to ensure that any new contribution does not strongly overlap with existing func
 <div class="section" id="in-the-event-of-a-conflict">
 <h3>In the event of a conflict<a class="headerlink" href="#in-the-event-of-a-conflict" title="Permalink to this headline">¶</a></h3>
 <p>In the event of two or more people working on the same issue, the general precedence will go to the person who first commented in the issue. If no comments it will go to the first person to submit a PR for review. Each situation will differ though, and the core contributors will make the best judgement call if needed.</p>
+</div>
+<div class="section" id="if-the-issue-ticket-has-someone-assigned-to-it">
+<h3>If the issue ticket has someone assigned to it<a class="headerlink" href="#if-the-issue-ticket-has-someone-assigned-to-it" title="Permalink to this headline">¶</a></h3>
+<p>If the issue is assigned then precedence goes to the assignee. However if there has been no activity for 2 weeks from assignment date the ticket is open for all again and can be unassigned.</p>
 </div>
 </div>
 <div class="section" id="making-the-pull-request">
@@ -368,7 +380,7 @@ however contributions including them are welcome.</p>
 <a class="reference external" href="https://numpydoc.readthedocs.io/en/latest/format.html">ArviZ API Guide</a>
 please consider adding inline documentation examples.
 <code class="docutils literal notranslate"><span class="pre">az.plot_posterior</span></code> is a particularly
-<a class="reference external" href="https://arviz-devs.github.io/arviz/generated/arviz.plot_posterior.html#arviz.plot_posterior">good example</a>.</p>
+<a class="reference external" href="https://arviz-devs.github.io/arviz/api/generated/arviz.plot_posterior.html#arviz.plot_posterior">good example</a>.</p>
 </div>
 </div>
 </div>
@@ -545,7 +557,7 @@ $ docker exec -it jupyter-dock bash -c &quot;jupyter notebook --ip 0.0.0.0 --no-
 <h3>Building documentation with Docker<a class="headerlink" href="#building-documentation-with-docker" title="Permalink to this headline">¶</a></h3>
 <p>The documentation can be build with Docker by running <code class="docutils literal notranslate"><span class="pre">./scripts/container.sh</span> <span class="pre">--docs</span></code>. The docker image contains by default all dependencies needed
 for building the documentation. After having build the docs in the Docker
-container, they can be checked at <code class="docutils literal notranslate"><span class="pre">doc/build</span></code>.</p>
+container, they can be checked at <code class="docutils literal notranslate"><span class="pre">doc/build</span></code> and viewed in the browser from <code class="docutils literal notranslate"><span class="pre">doc/build/index.html</span></code>. To rebuild the docs re-run <code class="docutils literal notranslate"><span class="pre">./scripts/container.sh</span> <span class="pre">--docs</span></code> after making changes.</p>
 </div>
 </div>
 <div class="section" id="running-the-benchmark-tests">
@@ -573,19 +585,21 @@ $ asv run
               
           </main>
           
+  
+
 
       </div>
     </div>
 
     
-  <script src="../_static/js/index.30270b6e4c972e43c488.js"></script>
+  <script src="../_static/js/index.3da636dd464baa7582d2.js"></script>
 
 
     <footer class="footer mt-5 mt-md-0">
   <div class="container">
     <p>
           &copy; Copyright 2018, ArviZ devs.<br/>
-        Created using <a href="http://sphinx-doc.org/">Sphinx</a> 3.2.1.<br/>
+        Created using <a href="http://sphinx-doc.org/">Sphinx</a> 3.4.3.<br/>
     </p>
   </div>
 </footer>

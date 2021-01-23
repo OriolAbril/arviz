@@ -18,7 +18,6 @@
       SamplingWrapper.check_implemented_methods
       SamplingWrapper.get_inference_data
       SamplingWrapper.log_likelihood__i
-      SamplingWrapper.point_log_likelihood
       SamplingWrapper.sample
       SamplingWrapper.sel_observations
    

@@ -20,13 +20,16 @@
       InferenceData.assign_coords
       InferenceData.chunk
       InferenceData.compute
+      InferenceData.copy
       InferenceData.cumsum
       InferenceData.extend
       InferenceData.from_netcdf
+      InferenceData.get
       InferenceData.get_index
       InferenceData.groups
       InferenceData.isel
       InferenceData.items
+      InferenceData.keys
       InferenceData.load
       InferenceData.map
       InferenceData.max

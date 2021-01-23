@@ -5,9 +5,9 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>InferenceData schema specification &#8212; ArviZ 0.10.0 documentation</title>
+    <title>InferenceData schema specification &#8212; ArviZ 0.11.0 documentation</title>
     
-  <link rel="stylesheet" href="../_static/css/index.d431a4ee1c1efae0e38bdfebc22debff.css">
+  <link rel="stylesheet" href="../_static/css/index.73d71520a4ca3b99cfee5594769eaaae.css">
 
     
   <link rel="stylesheet"
@@ -25,18 +25,19 @@
     href="../_static/vendor/lato_latin-ext/1.44.1/index.css">
 
     
-    <link rel="stylesheet" href="../_static/basic.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/basic.css" type="text/css" />
     <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
     
-  <link rel="preload" as="script" href="../_static/js/index.30270b6e4c972e43c488.js">
+  <link rel="preload" as="script" href="../_static/js/index.3da636dd464baa7582d2.js">
 
     <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
     <script src="../_static/jquery.js"></script>
     <script src="../_static/underscore.js"></script>
     <script src="../_static/doctools.js"></script>
-    <script src="../_static/language_data.js"></script>
     <script src="../_static/togglebutton.js"></script>
     <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
     <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
@@ -55,11 +56,11 @@
     <nav class="navbar navbar-light navbar-expand-lg bg-light fixed-top bd-navbar" id="navbar-main">
 <div class="container-xl">
 
-    
     <a class="navbar-brand" href="../index.html">
-      <img src="../_static/logo.png" class="logo" alt="logo">
-    </a>
     
+      <img src="../_static/logo.png" class="logo" alt="logo" />
+    
+    </a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-menu" aria-controls="navbar-menu" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
     </button>
@@ -126,68 +127,68 @@
     <div class="container-xl">
       <div class="row">
           
-          <div class="col-12 col-md-3 bd-sidebar">
-
-<form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+  
+    
+          <div class="col-12 col-md-3 bd-sidebar"><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
   <i class="icon fas fa-search"></i>
   <input type="search" class="form-control" name="q" id="search-input" placeholder="Search the docs ..." aria-label="Search the docs ..." autocomplete="off" >
 </form>
-
-
 <nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
 
-  <div class="bd-toc-item active">
+    <div class="bd-toc-item active">
+    
   
-
-  <ul class="nav bd-sidenav">
-      
-      
-      
-      
-      
-      
+    <ul class="nav bd-sidenav">
+        
+        
+        
+        
+        
         
           
-
-              <li class="active">
-                  <a href="../user_guide/data_structures.html">Data structures</a>
-                  <ul>
-                  
-                      <li class="active">
-                          <a href="">InferenceData schema specification</a>
-                      </li>
-                  
-                  </ul>
-              </li>
+            
+  
+                <li class="active">
+                    <a href="../user_guide/data_structures.html">Data structures</a>
+                    <ul>
+                    
+                        <li class="active">
+                            <a href="">InferenceData schema specification</a>
+                        </li>
+                    
+                    </ul>
+                </li>
+            
+          
+            
+                <li class="">
+                    <a href="../user_guide/computation.html">Computation</a>
+                </li>
+            
+          
+            
+                <li class="">
+                    <a href="../user_guide/sampling_wrappers.html">Sampling wrappers</a>
+                </li>
+            
           
         
-          
-              <li class="">
-                  <a href="../user_guide/computation.html">Computation</a>
-              </li>
-          
         
-          
-              <li class="">
-                  <a href="../user_guide/sampling_wrappers.html">Sampling wrappers</a>
-              </li>
-          
         
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-    </ul>
-
-</nav>
+        
+        
+        
+        
+        
+        
+        
+      </ul>
+  
+  </nav>
           </div>
           
+  
+
 
           
   
@@ -286,6 +287,8 @@
 
 
           
+  
+    
           <main class="col-12 col-md-9 col-xl-7 py-md-5 pl-md-5 pr-md-4 bd-content" role="main">
               
               <div>
@@ -341,19 +344,28 @@
 </div>
 <div class="section" id="sample-stats">
 <h3><code class="docutils literal notranslate"><span class="pre">sample_stats</span></code><a class="headerlink" href="#sample-stats" title="Permalink to this headline">¶</a></h3>
-<p>Information and diagnostics for each <code class="docutils literal notranslate"><span class="pre">posterior</span></code> sample, provided by the inference backend. It may vary depending on the algorithm used by the backend (i.e. an affine invariant sampler has no energy associated). The name convention used for <code class="docutils literal notranslate"><span class="pre">sample_stats</span></code> variables is the following:</p>
+<p>Information and diagnostics for each <code class="docutils literal notranslate"><span class="pre">posterior</span></code> sample, provided by the inference
+backend. It may vary depending on the algorithm used by the backend (i.e. an affine
+invariant sampler has no energy associated). Therefore none of these parameters
+should be assumed to be present in the <code class="docutils literal notranslate"><span class="pre">sample_stats</span></code> group. The convention
+below serves to ensure that <em>if</em> a variable is present with one of these names
+it will correspond to the definition included here.</p>
+<p>The name convention used for <code class="docutils literal notranslate"><span class="pre">sample_stats</span></code> variables is the following:</p>
 <ul class="simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">lp</span></code>: (unnormalized) log probability for sample</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">step_size</span></code></p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">step_size_bar</span></code></p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">tune</span></code>: boolean variable indicating if the sampler is tuning or sampling</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">depth</span></code>:</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">tree_size</span></code>:</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">mean_tree_accept</span></code>:</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">diverging</span></code>: HMC-NUTS only, boolean variable indicating divergent transitions</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">energy</span></code>: HMC-NUTS only</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">energy_error</span></code></p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">max_energy_error</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">lp</span></code>: The joint log posterior density for the model (up to an additive constant).</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">acceptance_rate</span></code>: The average acceptance probabilities of all possible samples in the proposed tree.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">step_size</span></code>: The current integration step size.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">step_size_nom</span></code>: The nominal integration step size. The <code class="docutils literal notranslate"><span class="pre">step_size</span></code> may differ from this, for example if the step size is jittered. Should only be present if <code class="docutils literal notranslate"><span class="pre">step_size</span></code> is also present and it varies between samples (i.e. step size is jittered).</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">tree_depth</span></code>: The number of tree doublings in the balanced binary tree.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">n_steps</span></code>: The number of leapfrog steps computed. It is related to <code class="docutils literal notranslate"><span class="pre">tree_depth</span></code> with <code class="docutils literal notranslate"><span class="pre">n_steps</span> <span class="pre">&lt;=</span> <span class="pre">2^tree_dept</span></code>.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">diverging</span></code>: (boolean) Indicates the presence of leapfrog transitions with large energy deviation
+from starting and subsequent termination of the trajectory. “large” is defined as <code class="docutils literal notranslate"><span class="pre">max_energy_error</span></code> going over a threshold.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">energy</span></code>: The value of the Hamiltonian energy for the accepted proposal (up to an
+additive constant).</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">energy_error</span></code>: The difference in the Hamiltonian energy between the initial point and
+the accepted proposal.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">max_energy_error</span></code>: The maximum absolute difference in Hamiltonian energy between the initial point and all possible samples in the proposed tree.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">int_time</span></code>: The total integration time (static HMC sampler)</p></li>
 </ul>
 </div>
 <div class="section" id="log-likelihood">
@@ -432,19 +444,21 @@ may require some dimensions or coordinates to be different.</p>
               
           </main>
           
+  
+
 
       </div>
     </div>
 
     
-  <script src="../_static/js/index.30270b6e4c972e43c488.js"></script>
+  <script src="../_static/js/index.3da636dd464baa7582d2.js"></script>
 
 
     <footer class="footer mt-5 mt-md-0">
   <div class="container">
     <p>
           &copy; Copyright 2018, ArviZ devs.<br/>
-        Created using <a href="http://sphinx-doc.org/">Sphinx</a> 3.2.1.<br/>
+        Created using <a href="http://sphinx-doc.org/">Sphinx</a> 3.4.3.<br/>
     </p>
   </div>
 </footer>

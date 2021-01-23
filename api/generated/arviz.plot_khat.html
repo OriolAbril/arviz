@@ -5,9 +5,9 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>arviz.plot_khat &#8212; ArviZ 0.10.0 documentation</title>
+    <title>arviz.plot_khat &#8212; ArviZ 0.11.0 documentation</title>
     
-  <link rel="stylesheet" href="../../_static/css/index.d431a4ee1c1efae0e38bdfebc22debff.css">
+  <link rel="stylesheet" href="../../_static/css/index.73d71520a4ca3b99cfee5594769eaaae.css">
 
     
   <link rel="stylesheet"
@@ -25,18 +25,19 @@
     href="../../_static/vendor/lato_latin-ext/1.44.1/index.css">
 
     
-    <link rel="stylesheet" href="../../_static/basic.css" type="text/css" />
     <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/basic.css" type="text/css" />
     <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
     
-  <link rel="preload" as="script" href="../../_static/js/index.30270b6e4c972e43c488.js">
+  <link rel="preload" as="script" href="../../_static/js/index.3da636dd464baa7582d2.js">
 
     <script id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
     <script src="../../_static/jquery.js"></script>
     <script src="../../_static/underscore.js"></script>
     <script src="../../_static/doctools.js"></script>
-    <script src="../../_static/language_data.js"></script>
     <script src="../../_static/togglebutton.js"></script>
     <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
     <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
@@ -55,11 +56,11 @@
     <nav class="navbar navbar-light navbar-expand-lg bg-light fixed-top bd-navbar" id="navbar-main">
 <div class="container-xl">
 
-    
     <a class="navbar-brand" href="../../index.html">
-      <img src="../../_static/logo.png" class="logo" alt="logo">
-    </a>
     
+      <img src="../../_static/logo.png" class="logo" alt="logo" />
+    
+    </a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-menu" aria-controls="navbar-menu" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
     </button>
@@ -126,202 +127,202 @@
     <div class="container-xl">
       <div class="row">
           
-          <div class="col-12 col-md-3 bd-sidebar">
-
-<form class="bd-search d-flex align-items-center" action="../../search.html" method="get">
+  
+    
+          <div class="col-12 col-md-3 bd-sidebar"><form class="bd-search d-flex align-items-center" action="../../search.html" method="get">
   <i class="icon fas fa-search"></i>
   <input type="search" class="form-control" name="q" id="search-input" placeholder="Search the docs ..." aria-label="Search the docs ..." autocomplete="off" >
 </form>
-
-
 <nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
 
-  <div class="bd-toc-item active">
+    <div class="bd-toc-item active">
+    
   
-
-  <ul class="nav bd-sidenav">
-      
-      
-      
-      
-      
-      
-      
-      
+    <ul class="nav bd-sidenav">
+        
+        
+        
+        
+        
+        
+        
         
           
-
-              <li class="active">
-                  <a href="../plots.html">Plots</a>
-                  <ul>
-                  
-                      <li class="">
-                          <a href="arviz.plot_autocorr.html">arviz.plot_autocorr</a>
-                      </li>
-                  
-                      <li class="">
-                          <a href="arviz.plot_bpv.html">arviz.plot_bpv</a>
-                      </li>
-                  
-                      <li class="">
-                          <a href="arviz.plot_compare.html">arviz.plot_compare</a>
-                      </li>
-                  
-                      <li class="">
-                          <a href="arviz.plot_density.html">arviz.plot_density</a>
-                      </li>
-                  
-                      <li class="">
-                          <a href="arviz.plot_dist.html">arviz.plot_dist</a>
-                      </li>
-                  
-                      <li class="">
-                          <a href="arviz.plot_dist_comparison.html">arviz.plot_dist_comparison</a>
-                      </li>
-                  
-                      <li class="">
-                          <a href="arviz.plot_elpd.html">arviz.plot_elpd</a>
-                      </li>
-                  
-                      <li class="">
-                          <a href="arviz.plot_energy.html">arviz.plot_energy</a>
-                      </li>
-                  
-                      <li class="">
-                          <a href="arviz.plot_ess.html">arviz.plot_ess</a>
-                      </li>
-                  
-                      <li class="">
-                          <a href="arviz.plot_forest.html">arviz.plot_forest</a>
-                      </li>
-                  
-                      <li class="">
-                          <a href="arviz.plot_hdi.html">arviz.plot_hdi</a>
-                      </li>
-                  
-                      <li class="">
-                          <a href="arviz.plot_joint.html">arviz.plot_joint</a>
-                      </li>
-                  
-                      <li class="">
-                          <a href="arviz.plot_kde.html">arviz.plot_kde</a>
-                      </li>
-                  
-                      <li class="active">
-                          <a href="">arviz.plot_khat</a>
-                      </li>
-                  
-                      <li class="">
-                          <a href="arviz.plot_loo_pit.html">arviz.plot_loo_pit</a>
-                      </li>
-                  
-                      <li class="">
-                          <a href="arviz.plot_mcse.html">arviz.plot_mcse</a>
-                      </li>
-                  
-                      <li class="">
-                          <a href="arviz.plot_pair.html">arviz.plot_pair</a>
-                      </li>
-                  
-                      <li class="">
-                          <a href="arviz.plot_parallel.html">arviz.plot_parallel</a>
-                      </li>
-                  
-                      <li class="">
-                          <a href="arviz.plot_posterior.html">arviz.plot_posterior</a>
-                      </li>
-                  
-                      <li class="">
-                          <a href="arviz.plot_ppc.html">arviz.plot_ppc</a>
-                      </li>
-                  
-                      <li class="">
-                          <a href="arviz.plot_rank.html">arviz.plot_rank</a>
-                      </li>
-                  
-                      <li class="">
-                          <a href="arviz.plot_separation.html">arviz.plot_separation</a>
-                      </li>
-                  
-                      <li class="">
-                          <a href="arviz.plot_trace.html">arviz.plot_trace</a>
-                      </li>
-                  
-                      <li class="">
-                          <a href="arviz.plot_violin.html">arviz.plot_violin</a>
-                      </li>
-                  
-                  </ul>
-              </li>
+            
+  
+                <li class="active">
+                    <a href="../plots.html">Plots</a>
+                    <ul>
+                    
+                        <li class="">
+                            <a href="arviz.plot_autocorr.html">arviz.plot_autocorr</a>
+                        </li>
+                    
+                        <li class="">
+                            <a href="arviz.plot_bpv.html">arviz.plot_bpv</a>
+                        </li>
+                    
+                        <li class="">
+                            <a href="arviz.plot_compare.html">arviz.plot_compare</a>
+                        </li>
+                    
+                        <li class="">
+                            <a href="arviz.plot_density.html">arviz.plot_density</a>
+                        </li>
+                    
+                        <li class="">
+                            <a href="arviz.plot_dist.html">arviz.plot_dist</a>
+                        </li>
+                    
+                        <li class="">
+                            <a href="arviz.plot_dist_comparison.html">arviz.plot_dist_comparison</a>
+                        </li>
+                    
+                        <li class="">
+                            <a href="arviz.plot_elpd.html">arviz.plot_elpd</a>
+                        </li>
+                    
+                        <li class="">
+                            <a href="arviz.plot_energy.html">arviz.plot_energy</a>
+                        </li>
+                    
+                        <li class="">
+                            <a href="arviz.plot_ess.html">arviz.plot_ess</a>
+                        </li>
+                    
+                        <li class="">
+                            <a href="arviz.plot_forest.html">arviz.plot_forest</a>
+                        </li>
+                    
+                        <li class="">
+                            <a href="arviz.plot_hdi.html">arviz.plot_hdi</a>
+                        </li>
+                    
+                        <li class="">
+                            <a href="arviz.plot_joint.html">arviz.plot_joint</a>
+                        </li>
+                    
+                        <li class="">
+                            <a href="arviz.plot_kde.html">arviz.plot_kde</a>
+                        </li>
+                    
+                        <li class="active">
+                            <a href="">arviz.plot_khat</a>
+                        </li>
+                    
+                        <li class="">
+                            <a href="arviz.plot_loo_pit.html">arviz.plot_loo_pit</a>
+                        </li>
+                    
+                        <li class="">
+                            <a href="arviz.plot_mcse.html">arviz.plot_mcse</a>
+                        </li>
+                    
+                        <li class="">
+                            <a href="arviz.plot_pair.html">arviz.plot_pair</a>
+                        </li>
+                    
+                        <li class="">
+                            <a href="arviz.plot_parallel.html">arviz.plot_parallel</a>
+                        </li>
+                    
+                        <li class="">
+                            <a href="arviz.plot_posterior.html">arviz.plot_posterior</a>
+                        </li>
+                    
+                        <li class="">
+                            <a href="arviz.plot_ppc.html">arviz.plot_ppc</a>
+                        </li>
+                    
+                        <li class="">
+                            <a href="arviz.plot_rank.html">arviz.plot_rank</a>
+                        </li>
+                    
+                        <li class="">
+                            <a href="arviz.plot_separation.html">arviz.plot_separation</a>
+                        </li>
+                    
+                        <li class="">
+                            <a href="arviz.plot_trace.html">arviz.plot_trace</a>
+                        </li>
+                    
+                        <li class="">
+                            <a href="arviz.plot_violin.html">arviz.plot_violin</a>
+                        </li>
+                    
+                    </ul>
+                </li>
+            
+          
+            
+                <li class="">
+                    <a href="../stats.html">Stats</a>
+                </li>
+            
+          
+            
+                <li class="">
+                    <a href="../diagnostics.html">Diagnostics</a>
+                </li>
+            
+          
+            
+                <li class="">
+                    <a href="../stats_utils.html">Stats utils</a>
+                </li>
+            
+          
+            
+                <li class="">
+                    <a href="../data.html">Data</a>
+                </li>
+            
+          
+            
+                <li class="">
+                    <a href="../inference_data.html">InferenceData</a>
+                </li>
+            
+          
+            
+                <li class="">
+                    <a href="../utils.html">Utils</a>
+                </li>
+            
+          
+            
+                <li class="">
+                    <a href="../rcparams.html">rcParams</a>
+                </li>
+            
+          
+            
+                <li class="">
+                    <a href="../wrappers.html">Wrappers</a>
+                </li>
+            
+          
+            
+                <li class="">
+                    <a href="../stats_refitting.html">Stats (requiring refitting)</a>
+                </li>
+            
           
         
-          
-              <li class="">
-                  <a href="../stats.html">Stats</a>
-              </li>
-          
         
-          
-              <li class="">
-                  <a href="../diagnostics.html">Diagnostics</a>
-              </li>
-          
         
-          
-              <li class="">
-                  <a href="../stats_utils.html">Stats utils</a>
-              </li>
-          
         
-          
-              <li class="">
-                  <a href="../data.html">Data</a>
-              </li>
-          
         
-          
-              <li class="">
-                  <a href="../inference_data.html">InferenceData</a>
-              </li>
-          
         
-          
-              <li class="">
-                  <a href="../utils.html">Utils</a>
-              </li>
-          
         
-          
-              <li class="">
-                  <a href="../rcparams.html">rcParams</a>
-              </li>
-          
         
-          
-              <li class="">
-                  <a href="../wrappers.html">Wrappers</a>
-              </li>
-          
-        
-          
-              <li class="">
-                  <a href="../stats_refitting.html">Stats (requiring refitting)</a>
-              </li>
-          
-        
-      
-      
-      
-      
-      
-      
-      
-      
-    </ul>
-
-</nav>
+      </ul>
+  
+  </nav>
           </div>
           
+  
+
 
           
   
@@ -343,6 +344,8 @@
 
 
           
+  
+    
           <main class="col-12 col-md-9 col-xl-7 py-md-5 pl-md-5 pr-md-4 bd-content" role="main">
               
               <div>
@@ -351,24 +354,29 @@
 <h1>arviz.plot_khat<a class="headerlink" href="#arviz-plot-khat" title="Permalink to this headline">¶</a></h1>
 <dl class="py function">
 <dt id="arviz.plot_khat">
-<code class="sig-prename descclassname">arviz.</code><code class="sig-name descname">plot_khat</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">khats</span></em>, <em class="sig-param"><span class="n">color</span><span class="o">=</span><span class="default_value">'C0'</span></em>, <em class="sig-param"><span class="n">xlabels</span><span class="o">=</span><span class="default_value">False</span></em>, <em class="sig-param"><span class="n">show_bins</span><span class="o">=</span><span class="default_value">False</span></em>, <em class="sig-param"><span class="n">bin_format</span><span class="o">=</span><span class="default_value">'{1:.1f}%'</span></em>, <em class="sig-param"><span class="n">annotate</span><span class="o">=</span><span class="default_value">False</span></em>, <em class="sig-param"><span class="n">hover_label</span><span class="o">=</span><span class="default_value">False</span></em>, <em class="sig-param"><span class="n">hover_format</span><span class="o">=</span><span class="default_value">'{1}'</span></em>, <em class="sig-param"><span class="n">figsize</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">textsize</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">coords</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">legend</span><span class="o">=</span><span class="default_value">False</span></em>, <em class="sig-param"><span class="n">markersize</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">ax</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">hlines_kwargs</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">backend</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">backend_kwargs</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">show</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">kwargs</span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/arviz/plots/khatplot.html#plot_khat"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#arviz.plot_khat" title="Permalink to this definition">¶</a></dt>
-<dd><p>Plot Pareto tail indices.</p>
+<code class="sig-prename descclassname">arviz.</code><code class="sig-name descname">plot_khat</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">khats</span></em>, <em class="sig-param"><span class="n">color</span><span class="o">=</span><span class="default_value">'C0'</span></em>, <em class="sig-param"><span class="n">xlabels</span><span class="o">=</span><span class="default_value">False</span></em>, <em class="sig-param"><span class="n">show_hlines</span><span class="o">=</span><span class="default_value">False</span></em>, <em class="sig-param"><span class="n">show_bins</span><span class="o">=</span><span class="default_value">False</span></em>, <em class="sig-param"><span class="n">bin_format</span><span class="o">=</span><span class="default_value">'{1:.1f}%'</span></em>, <em class="sig-param"><span class="n">annotate</span><span class="o">=</span><span class="default_value">False</span></em>, <em class="sig-param"><span class="n">threshold</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">hover_label</span><span class="o">=</span><span class="default_value">False</span></em>, <em class="sig-param"><span class="n">hover_format</span><span class="o">=</span><span class="default_value">'{1}'</span></em>, <em class="sig-param"><span class="n">figsize</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">textsize</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">coords</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">legend</span><span class="o">=</span><span class="default_value">False</span></em>, <em class="sig-param"><span class="n">markersize</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">ax</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">hlines_kwargs</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">backend</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">backend_kwargs</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">show</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">kwargs</span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/arviz/plots/khatplot.html#plot_khat"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#arviz.plot_khat" title="Permalink to this definition">¶</a></dt>
+<dd><p>Plot Pareto tail indices for diagnosing convergence.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><dl class="simple">
-<dt><strong>khats</strong><span class="classifier">ELPDData cointaining pareto shapes information or array</span></dt><dd><p>Pareto tail indices.</p>
+<dt><strong>khats</strong><span class="classifier">ELPDData cointaining Pareto shapes information or array of</span></dt><dd><p>Pareto tail indices.</p>
 </dd>
-<dt><strong>color</strong><span class="classifier">str or array_like, optional</span></dt><dd><p>Colors of the scatter plot, if color is a str all dots will have the same color,
-if it is the size of the observations, each dot will have the specified color,
-otherwise, it will be interpreted as a list of the dims to be used for the color code</p>
+<dt><strong>color</strong><span class="classifier">str or array_like, optional</span></dt><dd><p>Colors of the scatter plot, if color is a str all dots will
+have the same color, if it is the size of the observations,
+each dot will have the specified color, otherwise, it will be
+interpreted as a list of the dims to be used for the color
+code</p>
 </dd>
 <dt><strong>xlabels</strong><span class="classifier">bool, optional</span></dt><dd><p>Use coords as xticklabels</p>
 </dd>
-<dt><strong>show_bins</strong><span class="classifier">bool, optional</span></dt><dd><p>Show the number of khats which fall in each bin.</p>
+<dt><strong>show_hlines</strong><span class="classifier">bool, optional</span></dt><dd><p>Show the horizontal lines, by default at the values [0, 0.5, 0.7, 1].</p>
+</dd>
+<dt><strong>show_bins</strong><span class="classifier">bool, optional</span></dt><dd><p>Show the percentage of khats falling in each bin, as delimited by hlines.</p>
 </dd>
 <dt><strong>bin_format</strong><span class="classifier">str, optional</span></dt><dd><p>The string is used as formatting guide calling <code class="docutils literal notranslate"><span class="pre">bin_format.format(count,</span> <span class="pre">pct)</span></code>.</p>
 </dd>
-<dt><strong>annotate</strong><span class="classifier">bool, optional</span></dt><dd><p>Show the labels of k values larger than 1.</p>
+<dt><strong>threshold</strong><span class="classifier">float, optional</span></dt><dd><p>Show the labels of k values larger than threshold. Defaults to <cite>None</cite>,
+no observations will be highlighted.</p>
 </dd>
 <dt><strong>hover_label</strong><span class="classifier">bool, optional</span></dt><dd><p>Show the datapoint label when hovering over it with the mouse. Requires an interactive
 backend.</p>
@@ -409,6 +417,22 @@ check the plotting method of the backend.</p>
 </dl>
 </dd>
 </dl>
+<p class="rubric">Notes</p>
+<p>The Generalized Pareto distribution (GPD) may be used to diagnose
+convergence rates for importance sampling.  GPD has parameters
+offset, scale, and shape. The shape parameter is usually denoted
+with <code class="docutils literal notranslate"><span class="pre">k</span></code>. <code class="docutils literal notranslate"><span class="pre">k</span></code> also tells how many finite moments the
+distribution has. The pre-asymptotic convergence rate of
+importance sampling can be estimated based on the fractional
+number of finite moments of the importance ratio distribution. GPD
+is fitted to the largest importance ratios and the estimated shape
+parameter <code class="docutils literal notranslate"><span class="pre">k</span></code>, i.e., <code class="docutils literal notranslate"><span class="pre">\hat{k}`</span> <span class="pre">can</span> <span class="pre">then</span> <span class="pre">be</span> <span class="pre">used</span> <span class="pre">as</span> <span class="pre">a</span> <span class="pre">diagnostic</span>
+<span class="pre">(most</span> <span class="pre">importantly</span> <span class="pre">if</span> <span class="pre">``\hat{k}</span> <span class="pre">&gt;</span> <span class="pre">0.7</span></code>, then the convergence rate
+is impractically low). See <a href="#id2"><span class="problematic" id="id1">[1]_</span></a>.</p>
+<p class="rubric">References</p>
+<p>..[1] Vehtari, A., Simpson, D., Gelman, A., Yao, Y., Gabry, J.,
+2019. Pareto Smoothed Importance Sampling. arXiv:1507.02646
+[stat].</p>
 <p class="rubric">Examples</p>
 <p>Plot estimated pareto shape parameters showing how many fall in each category.</p>
 <div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">arviz</span> <span class="k">as</span> <span class="nn">az</span>
@@ -423,7 +447,7 @@ check the plotting method of the backend.</p>
 <p>Show xlabels</p>
 <div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">centered_eight</span> <span class="o">=</span> <span class="n">az</span><span class="o">.</span><span class="n">load_arviz_data</span><span class="p">(</span><span class="s2">&quot;centered_eight&quot;</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">khats</span> <span class="o">=</span> <span class="n">az</span><span class="o">.</span><span class="n">loo</span><span class="p">(</span><span class="n">centered_eight</span><span class="p">,</span> <span class="n">pointwise</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span><span class="o">.</span><span class="n">pareto_k</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">az</span><span class="o">.</span><span class="n">plot_khat</span><span class="p">(</span><span class="n">khats</span><span class="p">,</span> <span class="n">xlabels</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">annotate</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">az</span><span class="o">.</span><span class="n">plot_khat</span><span class="p">(</span><span class="n">khats</span><span class="p">,</span> <span class="n">xlabels</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">threshold</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
 </pre></div>
 </div>
 <div class="figure align-default">
@@ -457,19 +481,21 @@ check the plotting method of the backend.</p>
               
           </main>
           
+  
+
 
       </div>
     </div>
 
     
-  <script src="../../_static/js/index.30270b6e4c972e43c488.js"></script>
+  <script src="../../_static/js/index.3da636dd464baa7582d2.js"></script>
 
 
     <footer class="footer mt-5 mt-md-0">
   <div class="container">
     <p>
           &copy; Copyright 2018, ArviZ devs.<br/>
-        Created using <a href="http://sphinx-doc.org/">Sphinx</a> 3.2.1.<br/>
+        Created using <a href="http://sphinx-doc.org/">Sphinx</a> 3.4.3.<br/>
     </p>
   </div>
 </footer>

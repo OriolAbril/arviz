@@ -5,9 +5,9 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>arviz.SamplingWrapper &#8212; ArviZ 0.10.0 documentation</title>
+    <title>arviz.SamplingWrapper &#8212; ArviZ 0.11.0 documentation</title>
     
-  <link rel="stylesheet" href="../../_static/css/index.d431a4ee1c1efae0e38bdfebc22debff.css">
+  <link rel="stylesheet" href="../../_static/css/index.73d71520a4ca3b99cfee5594769eaaae.css">
 
     
   <link rel="stylesheet"
@@ -25,18 +25,19 @@
     href="../../_static/vendor/lato_latin-ext/1.44.1/index.css">
 
     
-    <link rel="stylesheet" href="../../_static/basic.css" type="text/css" />
     <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/basic.css" type="text/css" />
     <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
     
-  <link rel="preload" as="script" href="../../_static/js/index.30270b6e4c972e43c488.js">
+  <link rel="preload" as="script" href="../../_static/js/index.3da636dd464baa7582d2.js">
 
     <script id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
     <script src="../../_static/jquery.js"></script>
     <script src="../../_static/underscore.js"></script>
     <script src="../../_static/doctools.js"></script>
-    <script src="../../_static/language_data.js"></script>
     <script src="../../_static/togglebutton.js"></script>
     <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
     <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
@@ -55,11 +56,11 @@
     <nav class="navbar navbar-light navbar-expand-lg bg-light fixed-top bd-navbar" id="navbar-main">
 <div class="container-xl">
 
-    
     <a class="navbar-brand" href="../../index.html">
-      <img src="../../_static/logo.png" class="logo" alt="logo">
-    </a>
     
+      <img src="../../_static/logo.png" class="logo" alt="logo" />
+    
+    </a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-menu" aria-controls="navbar-menu" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
     </button>
@@ -126,114 +127,114 @@
     <div class="container-xl">
       <div class="row">
           
-          <div class="col-12 col-md-3 bd-sidebar">
-
-<form class="bd-search d-flex align-items-center" action="../../search.html" method="get">
+  
+    
+          <div class="col-12 col-md-3 bd-sidebar"><form class="bd-search d-flex align-items-center" action="../../search.html" method="get">
   <i class="icon fas fa-search"></i>
   <input type="search" class="form-control" name="q" id="search-input" placeholder="Search the docs ..." aria-label="Search the docs ..." autocomplete="off" >
 </form>
-
-
 <nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
 
-  <div class="bd-toc-item active">
+    <div class="bd-toc-item active">
+    
   
-
-  <ul class="nav bd-sidenav">
-      
-      
-      
-      
-      
-      
-      
-      
+    <ul class="nav bd-sidenav">
+        
+        
+        
+        
+        
+        
+        
         
           
-              <li class="">
-                  <a href="../plots.html">Plots</a>
-              </li>
+            
+                <li class="">
+                    <a href="../plots.html">Plots</a>
+                </li>
+            
+          
+            
+                <li class="">
+                    <a href="../stats.html">Stats</a>
+                </li>
+            
+          
+            
+                <li class="">
+                    <a href="../diagnostics.html">Diagnostics</a>
+                </li>
+            
+          
+            
+                <li class="">
+                    <a href="../stats_utils.html">Stats utils</a>
+                </li>
+            
+          
+            
+                <li class="">
+                    <a href="../data.html">Data</a>
+                </li>
+            
+          
+            
+                <li class="">
+                    <a href="../inference_data.html">InferenceData</a>
+                </li>
+            
+          
+            
+                <li class="">
+                    <a href="../utils.html">Utils</a>
+                </li>
+            
+          
+            
+                <li class="">
+                    <a href="../rcparams.html">rcParams</a>
+                </li>
+            
+          
+            
+  
+                <li class="active">
+                    <a href="../wrappers.html">Wrappers</a>
+                    <ul>
+                    
+                        <li class="active">
+                            <a href="">arviz.SamplingWrapper</a>
+                        </li>
+                    
+                        <li class="">
+                            <a href="arviz.PyStanSamplingWrapper.html">arviz.PyStanSamplingWrapper</a>
+                        </li>
+                    
+                    </ul>
+                </li>
+            
+          
+            
+                <li class="">
+                    <a href="../stats_refitting.html">Stats (requiring refitting)</a>
+                </li>
+            
           
         
-          
-              <li class="">
-                  <a href="../stats.html">Stats</a>
-              </li>
-          
         
-          
-              <li class="">
-                  <a href="../diagnostics.html">Diagnostics</a>
-              </li>
-          
         
-          
-              <li class="">
-                  <a href="../stats_utils.html">Stats utils</a>
-              </li>
-          
         
-          
-              <li class="">
-                  <a href="../data.html">Data</a>
-              </li>
-          
         
-          
-              <li class="">
-                  <a href="../inference_data.html">InferenceData</a>
-              </li>
-          
         
-          
-              <li class="">
-                  <a href="../utils.html">Utils</a>
-              </li>
-          
         
-          
-              <li class="">
-                  <a href="../rcparams.html">rcParams</a>
-              </li>
-          
         
-          
-
-              <li class="active">
-                  <a href="../wrappers.html">Wrappers</a>
-                  <ul>
-                  
-                      <li class="active">
-                          <a href="">arviz.SamplingWrapper</a>
-                      </li>
-                  
-                      <li class="">
-                          <a href="arviz.PyStanSamplingWrapper.html">arviz.PyStanSamplingWrapper</a>
-                      </li>
-                  
-                  </ul>
-              </li>
-          
-        
-          
-              <li class="">
-                  <a href="../stats_refitting.html">Stats (requiring refitting)</a>
-              </li>
-          
-        
-      
-      
-      
-      
-      
-      
-      
-      
-    </ul>
-
-</nav>
+      </ul>
+  
+  </nav>
           </div>
           
+  
+
 
           
   
@@ -255,6 +256,8 @@
 
 
           
+  
+    
           <main class="col-12 col-md-9 col-xl-7 py-md-5 pl-md-5 pr-md-4 bd-content" role="main">
               
               <div>
@@ -263,27 +266,43 @@
 <h1>arviz.SamplingWrapper<a class="headerlink" href="#arviz-samplingwrapper" title="Permalink to this headline">¶</a></h1>
 <dl class="py class">
 <dt id="arviz.SamplingWrapper">
-<em class="property">class </em><code class="sig-prename descclassname">arviz.</code><code class="sig-name descname">SamplingWrapper</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">model</span></em>, <em class="sig-param"><span class="n">idata_orig</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">log_like_fun</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">sample_kwargs</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">idata_kwargs</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/arviz/wrappers/base.html#SamplingWrapper"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#arviz.SamplingWrapper" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="sig-prename descclassname">arviz.</code><code class="sig-name descname">SamplingWrapper</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">model</span></em>, <em class="sig-param"><span class="n">idata_orig</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">log_lik_fun</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">is_ufunc</span><span class="o">=</span><span class="default_value">True</span></em>, <em class="sig-param"><span class="n">posterior_vars</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">sample_kwargs</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">idata_kwargs</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">log_lik_kwargs</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">apply_ufunc_kwargs</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/arviz/wrappers/base.html#SamplingWrapper"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#arviz.SamplingWrapper" title="Permalink to this definition">¶</a></dt>
 <dd><p>Class wrapping sampling routines for its usage via ArviZ.</p>
 <p>Using a common class, all inference backends can be supported in ArviZ. Hence, statistical
 functions requiring refitting like Leave Future Out or Simulation Based Calibration can be
 performed from ArviZ.</p>
 <p>For more info on wrappers see <a class="reference internal" href="../wrappers.html#wrappers-api"><span class="std std-ref">Wrappers</span></a></p>
-<dl class="field-list simple">
+<dl class="field-list">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><dl class="simple">
+<dd class="field-odd"><dl>
 <dt><strong>model</strong></dt><dd><p>The model object used for sampling.</p>
 </dd>
-<dt><strong>idata_orig: InferenceData, optional</strong></dt><dd><p>Original InferenceData object.</p>
+<dt><strong>idata_orig</strong><span class="classifier">InferenceData, optional</span></dt><dd><p>Original InferenceData object.</p>
 </dd>
-<dt><strong>log_like_fun: callable, optional</strong></dt><dd><p>For simple cases where the pointwise log likelihood is a Python function, this
+<dt><strong>log_lik_fun</strong><span class="classifier">callable, optional</span></dt><dd><p>For simple cases where the pointwise log likelihood is a Python function, this
 function will be used to calculate the log likelihood. Otherwise,
-<code class="docutils literal notranslate"><span class="pre">point_log_likelihood</span></code> method must be implemented.</p>
+<code class="docutils literal notranslate"><span class="pre">point_log_likelihood</span></code> method must be implemented. It’s callback must be
+<code class="docutils literal notranslate"><span class="pre">log_lik_fun(*args,</span> <span class="pre">**log_lik_kwargs)</span></code> and will be called using
+<a class="reference internal" href="arviz.wrap_xarray_ufunc.html#arviz.wrap_xarray_ufunc" title="arviz.wrap_xarray_ufunc"><code class="xref py py-func docutils literal notranslate"><span class="pre">wrap_xarray_ufunc()</span></code></a> or <a class="reference external" href="http://xarray.pydata.org/en/stable/generated/xarray.apply_ufunc.html#xarray.apply_ufunc" title="(in xarray v0.16.3.dev0)"><code class="docutils literal notranslate"><span class="pre">xarray.apply_ufunc()</span></code></a> depending
+on the value of <cite>is_ufunc</cite>.</p>
+<p>For more details on <code class="docutils literal notranslate"><span class="pre">args</span></code> or <code class="docutils literal notranslate"><span class="pre">log_lik_kwargs</span></code> see the notes and
+parameters <code class="docutils literal notranslate"><span class="pre">posterior_vars</span></code> and <code class="docutils literal notranslate"><span class="pre">log_lik_kwargs</span></code>.</p>
 </dd>
-<dt><strong>sample_kwargs: dict, optional</strong></dt><dd><p>Sampling kwargs are stored as class attributes for their usage in the <code class="docutils literal notranslate"><span class="pre">sample</span></code>
+<dt><strong>is_ufunc</strong><span class="classifier">bool, default True</span></dt><dd><p>If True, call <code class="docutils literal notranslate"><span class="pre">log_lik_fun</span></code> using <a class="reference external" href="http://xarray.pydata.org/en/stable/generated/xarray.apply_ufunc.html#xarray.apply_ufunc" title="(in xarray v0.16.3.dev0)"><code class="docutils literal notranslate"><span class="pre">xarray.apply_ufunc()</span></code></a> otherwise
+use <a class="reference internal" href="arviz.wrap_xarray_ufunc.html#arviz.wrap_xarray_ufunc" title="arviz.wrap_xarray_ufunc"><code class="xref py py-func docutils literal notranslate"><span class="pre">wrap_xarray_ufunc()</span></code></a>.</p>
+</dd>
+<dt><strong>posterior_vars</strong><span class="classifier">list of str, optional</span></dt><dd><p>List of variable names to unpack as <code class="docutils literal notranslate"><span class="pre">args</span></code> for <code class="docutils literal notranslate"><span class="pre">log_lik_fun</span></code>. Each string in
+the list will be used to retrieve a DataArray from the Dataset in the posterior
+group and passed to <code class="docutils literal notranslate"><span class="pre">log_lik_fun</span></code>.</p>
+</dd>
+<dt><strong>sample_kwargs</strong><span class="classifier">dict, optional</span></dt><dd><p>Sampling kwargs are stored as class attributes for their usage in the <code class="docutils literal notranslate"><span class="pre">sample</span></code>
 method.</p>
 </dd>
-<dt><strong>idata_kwargs: dict, optional</strong></dt><dd><p>kwargs are stored as class attributes to be used in the <code class="docutils literal notranslate"><span class="pre">get_inference_data</span></code> method.</p>
+<dt><strong>idata_kwargs</strong><span class="classifier">dict, optional</span></dt><dd><p>kwargs are stored as class attributes to be used in the <code class="docutils literal notranslate"><span class="pre">get_inference_data</span></code> method.</p>
+</dd>
+<dt><strong>log_lik_kwargs</strong><span class="classifier">dict, optional</span></dt><dd><p>Keyword arguments passed to <code class="docutils literal notranslate"><span class="pre">log_lik_fun</span></code>.</p>
+</dd>
+<dt><strong>apply_ufunc_kwargs</strong><span class="classifier">dict, optional</span></dt><dd><p>Passed to <a class="reference external" href="http://xarray.pydata.org/en/stable/generated/xarray.apply_ufunc.html#xarray.apply_ufunc" title="(in xarray v0.16.3.dev0)"><code class="docutils literal notranslate"><span class="pre">xarray.apply_ufunc()</span></code></a> or <a class="reference internal" href="arviz.wrap_xarray_ufunc.html#arviz.wrap_xarray_ufunc" title="arviz.wrap_xarray_ufunc"><code class="xref py py-func docutils literal notranslate"><span class="pre">wrap_xarray_ufunc()</span></code></a>.</p>
 </dd>
 </dl>
 </dd>
@@ -293,6 +312,8 @@ method.</p>
 <p>Sampling wrappers are an experimental feature in a very early stage. Please use them
 with caution.</p>
 </div>
+<p class="rubric">Notes</p>
+<p>Example of <code class="docutils literal notranslate"><span class="pre">log_like_fun</span></code> usage.</p>
 <p class="rubric">Methods</p>
 <table class="longtable table autosummary">
 <colgroup>
@@ -312,13 +333,10 @@ with caution.</p>
 <tr class="row-even"><td><p><a class="reference internal" href="arviz.SamplingWrapper.log_likelihood__i.html#arviz.SamplingWrapper.log_likelihood__i" title="arviz.SamplingWrapper.log_likelihood__i"><code class="xref py py-obj docutils literal notranslate"><span class="pre">SamplingWrapper.log_likelihood__i</span></code></a>(…)</p></td>
 <td><p>Get the log likelilhood samples <span class="math notranslate nohighlight">\(\log p_{post(-i)}(y_i)\)</span>.</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="arviz.SamplingWrapper.point_log_likelihood.html#arviz.SamplingWrapper.point_log_likelihood" title="arviz.SamplingWrapper.point_log_likelihood"><code class="xref py py-obj docutils literal notranslate"><span class="pre">SamplingWrapper.point_log_likelihood</span></code></a>(…)</p></td>
-<td><p>Pointwise log likelihood function.</p></td>
-</tr>
-<tr class="row-even"><td><p><a class="reference internal" href="arviz.SamplingWrapper.sample.html#arviz.SamplingWrapper.sample" title="arviz.SamplingWrapper.sample"><code class="xref py py-obj docutils literal notranslate"><span class="pre">SamplingWrapper.sample</span></code></a>(modified_observed_data)</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="arviz.SamplingWrapper.sample.html#arviz.SamplingWrapper.sample" title="arviz.SamplingWrapper.sample"><code class="xref py py-obj docutils literal notranslate"><span class="pre">SamplingWrapper.sample</span></code></a>(modified_observed_data)</p></td>
 <td><p>Sample <code class="docutils literal notranslate"><span class="pre">self.model</span></code> on the <code class="docutils literal notranslate"><span class="pre">modified_observed_data</span></code> subset.</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="arviz.SamplingWrapper.sel_observations.html#arviz.SamplingWrapper.sel_observations" title="arviz.SamplingWrapper.sel_observations"><code class="xref py py-obj docutils literal notranslate"><span class="pre">SamplingWrapper.sel_observations</span></code></a>(idx)</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="arviz.SamplingWrapper.sel_observations.html#arviz.SamplingWrapper.sel_observations" title="arviz.SamplingWrapper.sel_observations"><code class="xref py py-obj docutils literal notranslate"><span class="pre">SamplingWrapper.sel_observations</span></code></a>(idx)</p></td>
 <td><p>Select a subset of the observations in idata_orig.</p></td>
 </tr>
 </tbody>
@@ -340,19 +358,21 @@ with caution.</p>
               
           </main>
           
+  
+
 
       </div>
     </div>
 
     
-  <script src="../../_static/js/index.30270b6e4c972e43c488.js"></script>
+  <script src="../../_static/js/index.3da636dd464baa7582d2.js"></script>
 
 
     <footer class="footer mt-5 mt-md-0">
   <div class="container">
     <p>
           &copy; Copyright 2018, ArviZ devs.<br/>
-        Created using <a href="http://sphinx-doc.org/">Sphinx</a> 3.2.1.<br/>
+        Created using <a href="http://sphinx-doc.org/">Sphinx</a> 3.4.3.<br/>
     </p>
   </div>
 </footer>

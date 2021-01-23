@@ -5,9 +5,9 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>arviz.plots.traceplot &#8212; ArviZ 0.10.0 documentation</title>
+    <title>arviz.plots.traceplot &#8212; ArviZ 0.11.0 documentation</title>
     
-  <link rel="stylesheet" href="../../../_static/css/index.d431a4ee1c1efae0e38bdfebc22debff.css">
+  <link rel="stylesheet" href="../../../_static/css/index.73d71520a4ca3b99cfee5594769eaaae.css">
 
     
   <link rel="stylesheet"
@@ -25,18 +25,19 @@
     href="../../../_static/vendor/lato_latin-ext/1.44.1/index.css">
 
     
-    <link rel="stylesheet" href="../../../_static/basic.css" type="text/css" />
     <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/basic.css" type="text/css" />
     <link rel="stylesheet" type="text/css" href="../../../_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="../../../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
     
-  <link rel="preload" as="script" href="../../../_static/js/index.30270b6e4c972e43c488.js">
+  <link rel="preload" as="script" href="../../../_static/js/index.3da636dd464baa7582d2.js">
 
     <script id="documentation_options" data-url_root="../../../" src="../../../_static/documentation_options.js"></script>
     <script src="../../../_static/jquery.js"></script>
     <script src="../../../_static/underscore.js"></script>
     <script src="../../../_static/doctools.js"></script>
-    <script src="../../../_static/language_data.js"></script>
     <script src="../../../_static/togglebutton.js"></script>
     <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
     <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
@@ -53,11 +54,11 @@
     <nav class="navbar navbar-light navbar-expand-lg bg-light fixed-top bd-navbar" id="navbar-main">
 <div class="container-xl">
 
-    
     <a class="navbar-brand" href="../../../index.html">
-      <img src="../../../_static/logo.png" class="logo" alt="logo">
-    </a>
     
+      <img src="../../../_static/logo.png" class="logo" alt="logo" />
+    
+    </a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-menu" aria-controls="navbar-menu" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
     </button>
@@ -124,40 +125,40 @@
     <div class="container-xl">
       <div class="row">
           
-          <div class="col-12 col-md-3 bd-sidebar">
-
-<form class="bd-search d-flex align-items-center" action="../../../search.html" method="get">
+  
+    
+          <div class="col-12 col-md-3 bd-sidebar"><form class="bd-search d-flex align-items-center" action="../../../search.html" method="get">
   <i class="icon fas fa-search"></i>
   <input type="search" class="form-control" name="q" id="search-input" placeholder="Search the docs ..." aria-label="Search the docs ..." autocomplete="off" >
 </form>
-
-
 <nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
 
-  <div class="bd-toc-item active">
+    <div class="bd-toc-item active">
+    
   
-
-  <ul class="nav bd-sidenav">
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-    </ul>
-
-</nav>
+    <ul class="nav bd-sidenav">
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+      </ul>
+  
+  </nav>
           </div>
           
+  
+
 
           
   
@@ -179,6 +180,8 @@
 
 
           
+  
+    
           <main class="col-12 col-md-9 col-xl-7 py-md-5 pl-md-5 pr-md-4 bd-content" role="main">
               
               <div>
@@ -206,8 +209,8 @@
     <span class="n">rug</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span><span class="p">,</span>
     <span class="n">lines</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">List</span><span class="p">[</span><span class="n">Tuple</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">CoordSpec</span><span class="p">,</span> <span class="n">Any</span><span class="p">]]]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
     <span class="n">circ_var_names</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">List</span><span class="p">[</span><span class="nb">str</span><span class="p">]]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
-    <span class="n">circ_var_units</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="s2">&quot;radians&quot;</span><span class="p">,</span>
-    <span class="n">compact</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span><span class="p">,</span>
+    <span class="n">circ_var_units</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s2">&quot;radians&quot;</span><span class="p">,</span>
+    <span class="n">compact</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">True</span><span class="p">,</span>
     <span class="n">compact_prop</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">Union</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Mapping</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Any</span><span class="p">]]]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
     <span class="n">combined</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span><span class="p">,</span>
     <span class="n">chain_prop</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">Union</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Mapping</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Any</span><span class="p">]]]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
@@ -253,7 +256,7 @@
 <span class="sd">    figsize: tuple of (float, float), optional</span>
 <span class="sd">        If None, size is (12, variables * 2)</span>
 <span class="sd">    rug: bool, optional</span>
-<span class="sd">        If True adds a rugplot. Defaults to False. Ignored for 2D KDE.</span>
+<span class="sd">        If True adds a rugplot of samples. Defaults to False. Ignored for 2D KDE.</span>
 <span class="sd">        Only affects continuous variables.</span>
 <span class="sd">    lines: list of tuple of (str, dict, array_like), optional</span>
 <span class="sd">        List of (var_name, {&#39;coord&#39;: selection}, [line, positions]) to be overplotted as</span>
@@ -278,6 +281,10 @@
 <span class="sd">        Extra keyword arguments passed to `arviz.plot_dist`. Only affects continuous variables.</span>
 <span class="sd">    trace_kwargs: dict, optional</span>
 <span class="sd">        Extra keyword arguments passed to `plt.plot`</span>
+<span class="sd">    rank_kwargs : dict, optional</span>
+<span class="sd">        Extra keyword arguments passed to `arviz.plot_rank`</span>
+<span class="sd">    axes: axes, optional</span>
+<span class="sd">        Matplotlib axes or bokeh figures.</span>
 <span class="sd">    backend: {&quot;matplotlib&quot;, &quot;bokeh&quot;}, optional</span>
 <span class="sd">        Select plotting backend.</span>
 <span class="sd">    backend_config: dict, optional</span>
@@ -346,7 +353,7 @@
         <span class="k">try</span><span class="p">:</span>
             <span class="n">divergence_data</span> <span class="o">=</span> <span class="n">convert_to_dataset</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">group</span><span class="o">=</span><span class="s2">&quot;sample_stats&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">diverging</span>
         <span class="k">except</span> <span class="p">(</span><span class="ne">ValueError</span><span class="p">,</span> <span class="ne">AttributeError</span><span class="p">):</span>  <span class="c1"># No sample_stats, or no `.diverging`</span>
-            <span class="n">divergences</span> <span class="o">=</span> <span class="kc">False</span>
+            <span class="n">divergences</span> <span class="o">=</span> <span class="kc">None</span>
 
     <span class="k">if</span> <span class="n">coords</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
         <span class="n">coords</span> <span class="o">=</span> <span class="p">{}</span>
@@ -358,19 +365,21 @@
     <span class="k">else</span><span class="p">:</span>
         <span class="n">divergence_data</span> <span class="o">=</span> <span class="kc">False</span>
 
-    <span class="n">data</span> <span class="o">=</span> <span class="n">get_coords</span><span class="p">(</span><span class="n">convert_to_dataset</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">group</span><span class="o">=</span><span class="s2">&quot;posterior&quot;</span><span class="p">),</span> <span class="n">coords</span><span class="p">)</span>
+    <span class="n">coords_data</span> <span class="o">=</span> <span class="n">get_coords</span><span class="p">(</span><span class="n">convert_to_dataset</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">group</span><span class="o">=</span><span class="s2">&quot;posterior&quot;</span><span class="p">),</span> <span class="n">coords</span><span class="p">)</span>
 
     <span class="k">if</span> <span class="n">transform</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
-        <span class="n">data</span> <span class="o">=</span> <span class="n">transform</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
+        <span class="n">coords_data</span> <span class="o">=</span> <span class="n">transform</span><span class="p">(</span><span class="n">coords_data</span><span class="p">)</span>
 
-    <span class="n">var_names</span> <span class="o">=</span> <span class="n">_var_names</span><span class="p">(</span><span class="n">var_names</span><span class="p">,</span> <span class="n">data</span><span class="p">,</span> <span class="n">filter_vars</span><span class="p">)</span>
+    <span class="n">var_names</span> <span class="o">=</span> <span class="n">_var_names</span><span class="p">(</span><span class="n">var_names</span><span class="p">,</span> <span class="n">coords_data</span><span class="p">,</span> <span class="n">filter_vars</span><span class="p">)</span>
 
     <span class="k">if</span> <span class="n">compact</span><span class="p">:</span>
-        <span class="n">skip_dims</span> <span class="o">=</span> <span class="nb">set</span><span class="p">(</span><span class="n">data</span><span class="o">.</span><span class="n">dims</span><span class="p">)</span> <span class="o">-</span> <span class="p">{</span><span class="s2">&quot;chain&quot;</span><span class="p">,</span> <span class="s2">&quot;draw&quot;</span><span class="p">}</span>
+        <span class="n">skip_dims</span> <span class="o">=</span> <span class="nb">set</span><span class="p">(</span><span class="n">coords_data</span><span class="o">.</span><span class="n">dims</span><span class="p">)</span> <span class="o">-</span> <span class="p">{</span><span class="s2">&quot;chain&quot;</span><span class="p">,</span> <span class="s2">&quot;draw&quot;</span><span class="p">}</span>
     <span class="k">else</span><span class="p">:</span>
         <span class="n">skip_dims</span> <span class="o">=</span> <span class="nb">set</span><span class="p">()</span>
 
-    <span class="n">plotters</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">xarray_var_iter</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">var_names</span><span class="o">=</span><span class="n">var_names</span><span class="p">,</span> <span class="n">combined</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">skip_dims</span><span class="o">=</span><span class="n">skip_dims</span><span class="p">))</span>
+    <span class="n">plotters</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span>
+        <span class="n">xarray_var_iter</span><span class="p">(</span><span class="n">coords_data</span><span class="p">,</span> <span class="n">var_names</span><span class="o">=</span><span class="n">var_names</span><span class="p">,</span> <span class="n">combined</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">skip_dims</span><span class="o">=</span><span class="n">skip_dims</span><span class="p">)</span>
+    <span class="p">)</span>
     <span class="n">max_plots</span> <span class="o">=</span> <span class="n">rcParams</span><span class="p">[</span><span class="s2">&quot;plot.max_subplots&quot;</span><span class="p">]</span>
     <span class="n">max_plots</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">plotters</span><span class="p">)</span> <span class="k">if</span> <span class="n">max_plots</span> <span class="ow">is</span> <span class="kc">None</span> <span class="k">else</span> <span class="nb">max</span><span class="p">(</span><span class="n">max_plots</span> <span class="o">//</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
     <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">plotters</span><span class="p">)</span> <span class="o">&gt;</span> <span class="n">max_plots</span><span class="p">:</span>
@@ -385,7 +394,7 @@
     <span class="c1"># TODO: Check if this can be further simplified</span>
     <span class="n">trace_plot_args</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">(</span>
         <span class="c1"># User Kwargs</span>
-        <span class="n">data</span><span class="o">=</span><span class="n">data</span><span class="p">,</span>
+        <span class="n">data</span><span class="o">=</span><span class="n">coords_data</span><span class="p">,</span>
         <span class="n">var_names</span><span class="o">=</span><span class="n">var_names</span><span class="p">,</span>
         <span class="c1"># coords = coords,</span>
         <span class="n">divergences</span><span class="o">=</span><span class="n">divergences</span><span class="p">,</span>
@@ -436,19 +445,21 @@
               
           </main>
           
+  
+
 
       </div>
     </div>
 
     
-  <script src="../../../_static/js/index.30270b6e4c972e43c488.js"></script>
+  <script src="../../../_static/js/index.3da636dd464baa7582d2.js"></script>
 
 
     <footer class="footer mt-5 mt-md-0">
   <div class="container">
     <p>
           &copy; Copyright 2018, ArviZ devs.<br/>
-        Created using <a href="http://sphinx-doc.org/">Sphinx</a> 3.2.1.<br/>
+        Created using <a href="http://sphinx-doc.org/">Sphinx</a> 3.4.3.<br/>
     </p>
   </div>
 </footer>
